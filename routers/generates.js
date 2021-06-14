@@ -11,11 +11,18 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
     const generate = new Generate({
         mainColor: req.body.mainColor,
-        amount: req.body.amount
+        amount: req.body.amount,
+        title: "Create by Human",
+        creator: "Human",
+        allowSave: false,
+        allowQuickSave: false,
+        linkFacebook: false,
+        linkInstagram: false,
+        linkTwitter: false
     })
     try{
         const newColor = await generate.save()
-        res.redirect('gallery')
+        res.redirect('/save')
     }
     catch{
         res.render('generate', {

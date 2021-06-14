@@ -1,0 +1,22 @@
+<h2>Post setup</h2>
+<p>Here's your color palatte that others can see</p>
+<form action="/post" method="POST">
+    <input type="text" maxlength="30" name="title" value="<%= generate.title %>" placeholder="Title, ex: The color of..." required>
+    <label>By</label>
+    <input type="text" maxlength="15" name="creator" value="<%= generate.creator %>" placeholder="Your name here" required>
+    <label for="allowSave">Allow save</label>
+    <input type="checkbox" name="allowSave" checked value="<%= generate.allowSave = true %>" id="allowSave">
+    <label for="allowQuickSave">Allow quick save</label>
+    <input type="checkbox" name="allowQuickSave" checked value="<%= generate.allowQuickSave = true %>" id="allowQuickSave">
+    <label for="linkFacebook">Link my Facebook</label>
+    <input type="checkbox" name="linkFacebook" value="<%= generate.linkFacebook = true %>" id="linkFacebook">
+    <label for="linkInstagram">Link my Instagram</label>
+    <input type="checkbox" name="linkInstagram" value="<%= generate.linkInstagram = true %>" id="linkInstagram">
+    <label for="linkTwitter">Link my Twitter</label>
+    <input type="checkbox" name="linkTwitter" value="<%= generate.linkTwitter = true %>" id="linkTwitter">
+    <a href="../gallery">Cancel</a>
+    <p>Continue</p>
+    <h2>Complete payment</h2>
+    <p>Back</p>
+    <button type="submit">Pay</button>
+</form>

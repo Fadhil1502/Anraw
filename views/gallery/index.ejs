@@ -1,5 +1,9 @@
 Gallery
 <br>
 <% generate.forEach(color => { %>
-    <div><%= color.mainColor %> <%= color.amount %> </div>
+    <div>
+        <%= color.mainColor %> <%= color.amount %> <%= color.title %> <%= color.creator %>
+        <%= color.allowSave %> <%= color.allowQuickSave %> <%= color.linkFacebook %> <%= color.linkInstagram %>
+        <%= color.linkTwitter %>
+    </div>
 <% }) %> 
