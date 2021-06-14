@@ -1,0 +1,21 @@
+<form action="/generate" method="POST">
+    <h2>Select your main color</h2>
+    <input type="color" name="mainColor" value="<%= generate.mainColor = "#ff9900" %>">
+    <p>Suprise me</p>
+    <a href="/">Back</a>
+    <p>Next</p>
+    <h2>Select how many colors you want</h2>
+    <input type="radio" name="amount" id="one" value="<%= generate.amount = 1 %>">
+    <label for="one">1</label>
+    <input type="radio" name="amount" id="two" value="<%= generate.amount = 2 %>">
+    <label for="two">2</label>
+    <input type="radio" name="amount" id="three" value="<%= generate.amount = 3 %>">
+    <label for="three">3</label>
+    <input type="radio" name="amount" id="four" value="<%= generate.amount = 4 %>">
+    <label for="four">4</label>
+    <p>Back</p>
+    <p>Next</p>
+    <h2>Finishing your choice</h2>
+    <p>Back</p>
+    <button type="submit">Finish</button>
+</form>
