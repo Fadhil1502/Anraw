@@ -1,6 +1,6 @@
 <h2>Post setup</h2>
 <p>Here's your color palatte that others can see</p>
-<form action="/post" method="POST">
+<form action="/post/<%= generate.id %>?_method=PUT" method="POST">
     <input type="text" maxlength="30" name="title" value="<%= generate.title %>" placeholder="Title, ex: The color of..." required>
     <label>By</label>
     <input type="text" maxlength="15" name="creator" value="<%= generate.creator %>" placeholder="Your name here" required>

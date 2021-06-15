@@ -3,11 +3,13 @@ const mongoose = require('mongoose')
 const generateSchema = new mongoose.Schema({
     mainColor: {
         type: String,
-        required: true
+        required: true,
+        default: "#ff9900"
     },
     amount: {
         type: Number,
-        required: true
+        required: true,
+        default: 1
     },
     color2: {
         type: String
@@ -26,31 +28,48 @@ const generateSchema = new mongoose.Schema({
     },
     title: {
         type: String,
-        required: true
+        required: true,
+        default: "Created by Human"
     },
     creator: {
         type: String,
-        required: true
+        required: true,
+        default: "Human"
     },
     allowSave: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     },
     allowQuickSave: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     },
     linkFacebook: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     },
     linkInstagram: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     },
     linkTwitter: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false
+    },
+    dateCreated: {
+        type: Date,
+        required: true,
+        default: Date.now
+    },
+    saves: {
+        type: Number,
+        required: true,
+        default: 0
     }
 })
 
