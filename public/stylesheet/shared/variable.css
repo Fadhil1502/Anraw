@@ -1,0 +1,19 @@
+:root{
+    --hue: 36;
+    --main-title-font-size: 64px;
+    --title-font-size: 36px;
+    --font-size: 24px;
+    --lessreadble-font-size: 18px;
+    --highlight-font-color: hsl(var(--hue), 100%, 50%);
+    --highlight-font-color-hover: hsl(var(--hue), 100%, 62.5%);
+    --font-color: hsl(var(--hue), 100%, 100%);
+    --cta-button: hsl(var(--hue), 100%, 50%);
+    --cta-button-hover: hsl(var(--hue), 100%, 62.5%);
+    --ncta-button: hsl(var(--hue), 0%, 6%);
+    --ncta-button-hover: hsl(var(--hue), 100%, 50%);
+    --background: hsl(var(--hue), 0%, 6%);
+    --background-orange: hsl(var(--hue), 100%, 50%);
+    --background-white: hsl(var(--hue), 100%, 100%);
+    --margin-super: 50px;
+    --margin-small: 25px;
+}
