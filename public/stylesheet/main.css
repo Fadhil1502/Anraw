@@ -1,6 +1,7 @@
 @import url('shared/variable.css');
 @import url('shared/button.css');
 @import url('shared/header.css');
+@import url('shared/generate.css');
 
 *{
     margin: 0;
@@ -16,6 +17,14 @@ body{
     font-size: var(--font-size);
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
+input:focus{
+    outline: none;
+}
+  
 .container{
     max-width: 1280px;
     margin: var(--margin-super);

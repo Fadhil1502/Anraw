@@ -13,4 +13,22 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+// New Post Delete
+router.delete('/:id', async (req, res) => {
+    let generate
+    try{
+        generate = await Generate.findById(req.params.id)
+        await generate.remove()
+        res.redirect('/gallery')
+    }
+    catch{
+        if(generate == null){
+            res.redirect('/')
+        }
+        else{
+            res.redirect('/save/'+generate.id)
+        }
+    }
+})
+
 module.exports = router

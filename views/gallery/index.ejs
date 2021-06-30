@@ -2,8 +2,9 @@ Gallery
 <br>
 <% generate.forEach(color => { %>
     <div>
-        <%= color.mainColor %> <%= color.amount %> <%= color.title %> <%= color.creator %>
-        <%= color.allowSave %> <%= color.allowQuickSave %> <%= color.linkFacebook %> <%= color.linkInstagram %>
-        <%= color.linkTwitter %> <%= color.id %> <%= color.dateCreated %> <%= color.identitas %>
+        <%= color.color1 %> <%= color.color2 %> <%= color.color3 %> <%= color.color4 %> <%= color.color5 %> <%= color.color6 %> <%= color.color7 %> <%= color.amount %>
+        <form method="POST" action="/gallery/<%= color.id %>?_method=DELETE">
+            <button type="submit">DELETE</button>
+        </form>
     </div>
 <% }) %> 

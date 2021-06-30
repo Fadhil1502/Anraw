@@ -9,8 +9,8 @@
     --font-color: hsl(var(--hue), 100%, 100%);
     --cta-button: hsl(var(--hue), 100%, 50%);
     --cta-button-hover: hsl(var(--hue), 100%, 62.5%);
-    --ncta-button: hsl(var(--hue), 0%, 6%);
-    --ncta-button-hover: hsl(var(--hue), 100%, 50%);
+    --ncta-button: none;
+    --ncta-button-hover: hsl(var(--hue), 100%, 62.5%);
     --background: hsl(var(--hue), 0%, 6%);
     --background-orange: hsl(var(--hue), 100%, 50%);
     --background-white: hsl(var(--hue), 100%, 100%);

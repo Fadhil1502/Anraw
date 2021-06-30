@@ -1,7 +1,7 @@
 .button{
     border: none;
     border-radius: 25px;
-    padding: 6.25px 18.75px;
+    padding: 6.25px 25px;
     font-size: var(--font-size);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     cursor: pointer;
@@ -12,15 +12,18 @@
 
 .button-cta{
     background: var(--cta-button);
+    transition: 0.25s ease-in-out;
 }
 
 .button-lcta{
     background: var(--ncta-button);
     border: 1px solid var(--cta-button);
+    transition: 0.25s ease-in-out;
 }
 
 .button-ncta{
     background: var(--ncta-button);
+    transition: 0.25s ease-in-out;
 }
 
 .button-cta:hover{
@@ -33,5 +36,40 @@
 }
 
 .button-ncta:hover{
+    background: var(--ncta-button-hover);
+}
+
+.button-cta-ball{
+    border-radius: 50%;
+    padding: 6.25px;
+    background: var(--cta-button);
+    transition: 0.25s ease-in-out;
+}
+
+.button-lcta-ball{
+    border-radius: 50%;
+    padding: 6.25px;
+    background: var(--ncta-button);
+    border: 1px solid var(--cta-button);
+    transition: 0.25s ease-in-out;
+}
+
+.button-ncta-ball{
+    border-radius: 50%;
+    padding: 6.25px;
+    background: var(--ncta-button);
+    transition: 0.25s ease-in-out;
+}
+
+.button-cta-ball:hover{
+    background: var(--cta-button-hover);
+}
+
+.button-lcta-ball:hover{
+    background: var(--ncta-button-hover);
+    border: 1px solid var(--cta-button-hover);
+}
+
+.button-ncta-ball:hover{
     background: var(--ncta-button-hover);
 }

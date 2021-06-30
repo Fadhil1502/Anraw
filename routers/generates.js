@@ -9,11 +9,17 @@ router.get('/', (req, res) => {
 
 // New Color Create
 router.post('/', async (req, res) => {
-    
     const generate = new Generate({
-        mainColor: req.body.mainColor,
-        amount: req.body.amount,
+        color1: req.body.color1,
+        color2: req.body.color2,
+        color3: req.body.color3,
+        color4: req.body.color4,
+        color5: req.body.color5,
+        color6: req.body.color6,
+        color7: req.body.color7,
+        amount: req.body.amount
     })
+
     try{
         const newColor = await generate.save()
         res.redirect('/save/' + generate.id)

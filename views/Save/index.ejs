@@ -24,5 +24,7 @@
     Even following your social media, in one condition
 </p>
 <p>The condition is... you must pay to link your social media :)</p>
-<a href="../gallery">Maybe later</a>
+<form method="POST" action="/save/<%= generate.id %>?_method=DELETE">
+    <button type="submit">Maybe later</button>
+</form>
 <a href="../post/<%= generate.id %>">Sure</a>

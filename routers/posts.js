@@ -18,15 +18,15 @@ router.put('/:id', async (req, res) => {
     let generate
     try{
         generate = await Generate.findById(req.params.id)
-        generate.mainColor = generate.mainColor
-        generate.amount = generate.amount
         generate.title = req.body.title
         generate.creator = req.body.creator
         generate.allowSave = req.body.allowSave
         generate.allowQuickSave = req.body.allowQuickSave
+        // FIX THIS
         generate.linkFacebook = req.body.linkFacebook
         generate.linkInstagram = req.body.linkInstagram
         generate.linkTwitter = req.body.linkTwitter
+        // 
         await generate.save()
         res.redirect('/gallery')
     }
@@ -34,10 +34,12 @@ router.put('/:id', async (req, res) => {
         if(generate == null){
             res.redirect('/')
         }
-        res.render('post', {
-            generate: generate,
-            errorMessage: 'Error posting color'
-        })
+        else{
+            res.render('post', {
+                generate: generate,
+                errorMessage: 'Error posting color'
+            })
+        }
     }
 })
 

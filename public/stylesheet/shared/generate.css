@@ -1,0 +1,272 @@
+.generate{
+    transition: 1s ease-in-out;
+}
+
+.generate svg, .generate path, .generate g, .generate circle{
+    cursor: pointer;
+}
+
+.generate .section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.generate h2{
+    font-size: var(--title-font-size);
+    text-align: center;
+}
+
+.generate .background-ball{
+    border-radius: 50%;
+    filter: blur(5px);
+    position: fixed;
+    z-index: -1;
+    transition: 1s ease-in-out;
+}
+
+.input-color{
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-right: var(--margin-super);
+    transition: 0.5s ease-in-out;
+}
+
+.finish-color .input-color div{
+    opacity: 0%;
+    transition: 0.5s ease-in-out;
+}
+
+.finish-color .input-color + .color-setting{
+    opacity: 0%;
+    transition: 0.5s ease-in-out;
+}
+
+.finish-color #finishInput div{
+    opacity: 0%;
+    transition: 0.5s ease-in-out;
+}
+
+.finish-color #finishInput + .color-setting{
+    opacity: 0%;
+    transition: 0.5s ease-in-out;
+}
+
+.input-color:hover{
+    transform: translateY(-25px);
+    box-shadow: 0px 5px 10px var(--background-white);
+}
+
+.finish-color:hover .input-color div{
+    opacity: 100%;
+}
+
+.finish-color:hover .input-color + .color-setting{
+    opacity: 100%;
+}
+
+.finish-color:hover #finishInput div{
+    opacity: 100%;
+}
+
+.finish-color:hover #finishInput + .color-setting{
+    opacity: 100%;
+}
+
+.input-color input{
+    width: 175px;
+    height: 175px;
+    cursor: pointer;
+    transform: translate(-12.5px, -12.5px);
+    background: none;
+    border: none;
+}
+
+.Pmain-color{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: calc((100vh - 150px) / 4) 0 50px 0;
+}
+
+.Pmain-color .Pinput{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Pmain-color .input{
+    display: flex;
+}
+
+.basic-input{
+    height: 25px;
+    margin: calc(var(--margin-small) / 2);
+    border-radius: 25px;
+    border: none;
+    padding: 0px 6.25px;
+    cursor: text;
+    text-align: center;
+    font-size: var(--lessreadble-font-size);
+}
+
+.large-input {
+    width: 100%;
+}
+
+.small-input{
+    width: 75px;
+}
+
+.random{
+    font-size: var(--lessreadble-font-size);
+    text-align: center;
+    transition: 0.25s ease-in-out;
+}
+
+.random:hover{
+    letter-spacing: 2.5px;
+}
+
+.random b{
+    cursor: pointer;
+}
+
+#back{
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+}
+
+#reset{
+    position: fixed;
+    bottom: 50px;
+    left: calc((100vw - 100px) / 2);
+}
+
+#next{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+.progress{
+    width: 25px;
+    height: 250px;
+    position: fixed;
+    background: var(--background-white);
+    top: calc((100vh - 350px) / 2);
+    right: 12.5px;
+    border-radius: 25px;
+}
+
+#progress{
+    width: 100%;
+    height: 25px;
+    background: var(--background-orange);
+    border-radius: 25px;
+    transition: 1s ease-in-out;
+}
+
+.Pradio{
+    display: flex;
+    justify-content: center;
+    margin-top: var(--margin-super);
+}
+
+.generate .section input[type = radio]{
+    display: none;
+}
+
+.radio-label{
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+    background: var(--background-white);
+    margin: var(--margin-small);
+    font-size: 96px;
+    color: var(--background-orange);
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+}
+
+.radio-label:hover{
+    background: var(--background-orange);
+    color: var(--background-white);
+}
+
+.generate .section input[type = radio]:checked + label .radio-label{
+    color: var(--background-white);
+    background: var(--background-orange);
+}
+
+#colorAmount{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--background-white);
+    border-radius: 25px;
+    margin: var(--margin-small);
+}
+
+#colorAmount .color{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: calc(var(--margin-small) / 2);
+}
+
+#finishInput{
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #ff9900;
+}
+
+#allColor{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: var(--margin-super) 0px;
+}
+
+#allColor div{
+    margin: calc(var(--margin-small) / 2);
+}
+
+#allColor div div div{
+    margin: 0px;
+}
+
+#allColor div input[type = checkbox]{
+    display: none;
+}
+
+#allColor div input[type = checkbox]:checked + label .button-lcta-ball{
+    background: var(--background-orange);
+}
+
+.color-setting{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.finish{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    margin-top: calc(100vh - 200px);
+}
