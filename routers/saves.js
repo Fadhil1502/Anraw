@@ -2,6 +2,11 @@ const express = require('express')
 const router = express.Router()
 const Generate = require('../models/generate')
 
+//Unknown Save
+router.get('/', (req, res) => {
+    res.render('save/new', { generate: null })
+})
+
 // New Save Setup
 router.get('/:id', async (req, res) => {
     try{
@@ -13,7 +18,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-// New Post Delete
+// New Save Delete
 router.delete('/:id', async (req, res) => {
     let generate
     try{

@@ -4,7 +4,7 @@ const generateSchema = new mongoose.Schema({
     color1: {
         type: String,
         required: true,
-        default: "#ff9900"
+        default: "#ff9500"
     },
     color2: {
         type: String
@@ -30,44 +30,32 @@ const generateSchema = new mongoose.Schema({
         default: 1
     },
     title: {
-        type: String,
-        required: true,
-        default: "Created by Human"
+        type: String
     },
     creator: {
-        type: String,
-        required: true,
-        default: "Human"
+        type: String
     },
     allowSave: {
         type: Boolean,
-        default: false
+        default: true
     },
     allowQuickSave: {
         type: Boolean,
-        default: false
-    },
-    linkFacebook: {
-        type: Boolean,
-        default: false
+        default: true
     },
     linkInstagram: {
         type: Boolean,
-        default: false
-    },
-    linkTwitter: {
-        type: Boolean,
-        default: false
+        default: true
     },
     dateCreated: {
         type: Date,
         required: true,
         default: Date.now
     },
-    saves: {
-        type: Number,
+    posted: {
+        type: Boolean,
         required: true,
-        default: 0
+        default: false
     }
 })
 

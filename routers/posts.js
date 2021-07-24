@@ -22,11 +22,7 @@ router.put('/:id', async (req, res) => {
         generate.creator = req.body.creator
         generate.allowSave = req.body.allowSave
         generate.allowQuickSave = req.body.allowQuickSave
-        // FIX THIS
-        generate.linkFacebook = req.body.linkFacebook
         generate.linkInstagram = req.body.linkInstagram
-        generate.linkTwitter = req.body.linkTwitter
-        // 
         await generate.save()
         res.redirect('/gallery')
     }
@@ -39,6 +35,24 @@ router.put('/:id', async (req, res) => {
                 generate: generate,
                 errorMessage: 'Error posting color'
             })
+        }
+    }
+})
+
+// New Post Delete
+router.delete('/:id', async (req, res) => {
+    let generate
+    try{
+        generate = await Generate.findById(req.params.id)
+        await generate.remove()
+        res.redirect('/gallery')
+    }
+    catch{
+        if(generate == null){
+            res.redirect('/')
+        }
+        else{
+            res.redirect('/post/'+generate.id)
         }
     }
 })

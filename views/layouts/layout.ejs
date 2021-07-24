@@ -7,11 +7,13 @@
         <title>Anraw</title>
         <link rel="icon" href="/logo.png">
         <link rel="stylesheet" href="/stylesheet/main.css">
-        <script src="/script.js"></script>
+        <link rel="canonical" href="https://…"/>
+        <script src="/script.js" defer></script>
     </head>
     <body>
-        <div class="container">
-            <%- include('../partials/errorMessage.ejs') %>
+        <%- include('../partials/errorMessage.ejs') %>
+        <div class="container" id="container">
+            <%- include('../partials/loading.ejs') %> 
             <%- body %>
         </div>
     </body>

@@ -1,0 +1,289 @@
+.save svg, .save path, #saveN svg, #saveN path, #popup svg, #popup path{
+    cursor: pointer;
+}
+
+.save input[type=checkbox], .save input[type=radio]{
+    display: none;
+}
+
+.save .head{
+    width: 100%;
+    height: 125px;
+    top: 0;
+    background: var(--background);
+    margin-top: -50px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save .head p{
+    position: fixed;
+    right: 50px;
+    top: 50px;
+}
+
+.save .body{
+    display: flex;
+}
+
+.save .setting{
+    width: 275px;
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    background: var(--background);
+    margin-top: -75px;
+    z-index: 2;
+    position: sticky;
+    top: 50px;
+}
+
+.save .save-style{
+    display: flex;
+    flex-direction: column;
+}
+
+.save .choice{
+    width: fit-content;
+    margin-left: -50px;
+    padding: 10px 25px 10px 75px;
+    border-radius: 0px 25px 25px 0px;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+}
+
+.save .choice:hover{
+    background: var(--background-white);
+    color: var(--background-orange);
+}
+
+.save .save-style input[type = radio]:checked + label .choice{
+    background: var(--background-orange);
+    color: var(--background-white);
+}
+
+.save .setting-choice{
+    margin-left: 25px;
+}
+
+.save .style{
+    font-size: var(--lessreadble-font-size);
+    border-radius: 25px;
+    padding: 5px 25px;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+}
+
+.save .style:hover{
+    background: var(--background-white);
+    color: var(--background-orange);
+}
+
+.save .all-color-style input[type = radio]:checked + label .style{
+    background: var(--background-orange);
+    color: var(--background-white);
+}
+
+.save #optionCCC div, .save #optionIP div, .save #optionPDFF div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 6.25px 25px 6.25px 0px;
+}
+
+.save .option{
+    width: 25px;
+    height: 25px;
+    background: var(--background);
+    border-radius: 5px;
+    border: 1px solid var(--background-orange);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.save .option:hover{
+    border-radius: 25px;
+    background: var(--background-orange);
+}
+
+.save #optionIP input[type = checkbox]:checked + label .option, .save #optionPDFF input[type = checkbox]:checked + label .option{
+    background: var(--background-orange);
+}
+
+.save input[type = number]{
+    width: 50px;
+    background: var(--background-orange);
+    cursor: text;
+    border-radius: 25px;
+    border: none;
+    font-size: var(--lessreadble-font-size);
+    padding-left: 12.5px;
+    color: var(--background-white);
+}
+
+.save .slides{
+    background: var(--background-orange);
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    font-size: var(--lessreadble-font-size);
+    padding-left: 12.5px;
+    color: var(--background-white);
+}
+
+.save textarea{
+    width: 100%;
+    min-height: 100px;
+    max-height: 100vh;
+    background: var(--background-orange);
+    resize: vertical;
+    cursor: text;
+    font-size: var(--lessreadble-font-size);
+    color: var(--background-white);
+    border: none;
+    border-radius: 25px;
+    padding: 12.5px;
+}
+
+.save input[type = text]{
+    width: 100%;
+    background: var(--background-orange);
+    cursor: text;
+    font-size: var(--lessreadble-font-size);
+    color: var(--background-white);
+    border: none;
+    border-radius: 25px;
+    padding: 12.5px;
+}
+
+.save .save-file{
+    margin-left: -25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.save .preview{
+    width: calc(100% - 275px);
+    background: var(--background-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    color: var(--background);
+}
+
+.save .CCC{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--background);
+    padding: 25px;
+}
+
+.save .CCCC{
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+    margin-bottom: 12.5px;
+}
+
+.save .input-save-hex{
+    width: 100px;
+    border: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: var(--font-size);
+}
+
+.save .input-save{
+    width: 75px;
+    border: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: var(--font-size);
+}
+
+#saveN{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: var(--margin-small);
+}
+
+#saveN input{
+    width: 500px;
+    height: 50px;
+    padding: 12.5px 25px;
+    background: var(--background-orange);
+    border: none;
+    border-radius: 25px 0px 0px 25px;
+    cursor: text;
+    font-size: var(--font-size);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--background-white);
+}
+
+#saveN .form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#saveN .form button{
+    height: 50px;
+    border-radius: 0px 25px 25px 0px;
+    padding: 12.5px;
+}
+
+.saveA{
+    color: var(--highlight-font-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.saveA:hover{
+    color: var(--highlight-font-color-hover);
+}
+
+#backgroundPopup{
+    width: 100vw;
+    height: 100vh;
+    background: var(--background);
+    opacity: 75%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 25;
+}
+
+#popup{
+    padding: var(--margin-super);
+    position: fixed;
+    background: var(--background);
+    border-radius: 25px;
+    z-index: 50;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 50px var(--background-white);
+}
+
+#popup h2 a{
+    color: var(--highlight-font-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#popup h2 a:hover{
+    color: var(--highlight-font-color-hover);
+}
+
+#popup svg{
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}

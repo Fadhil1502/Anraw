@@ -1,30 +1,98 @@
-<header>
-    <h2>Preview</h2>
-    <p>Done</p>
-</header>
-<h3>Save style</h3>
-<ul>
-    <li>Copy color code</li>
-    <li>Instagram post</li>
-    <li>PDF file</li>
-    <li>Image</li>
-    <li>Print</li>
-</ul>
-<h3>Setting</h3>
-<p>Background</p>
-<input type="radio" name="Background" id="Dark" value="0">
-<label for="Dark">Dark</label>
-<input type="radio" name="Background" id="Light" value="1">
-<label for="Light">Light</label>
-<h2>Share to <a href="../gallery">Gallery</a>?</h2>
-<p>Hey there! Do you want to share your color palette on the Gallery?<br>
-    It would be great if other people saw your amazing palette<br>
-    <br>
-    Others can also save your pallete<br>
-    Even following your social media, in one condition
-</p>
-<p>The condition is... you must pay to link your social media :)</p>
-<form method="POST" action="/save/<%= generate.id %>?_method=DELETE">
-    <button type="submit">Maybe later</button>
-</form>
-<a href="../post/<%= generate.id %>">Sure</a>
+<div class="save" id="save" style="display: none;">
+    <div class="head" id="head">
+        <h2>Preview</h2>
+        <p><a class="button button-cta" onclick="doneSave('open')" id="doneButton">Done</a></p>
+    </div>
+    <div class="body">
+        <div class="setting" id="setting">
+            <h3>Save style</h3>
+            <div class="save-style">
+                <input type="radio" name="style" id="CCC" checked onchange="switchSetting('CCC')">
+                <label for="CCC"><div class="choice">Copy color code</div></label>
+                <% if(generate != null){ %>
+                    <%- include('../partials/IPR.ejs') %>
+                <% } %>
+                <input type="radio" name="style" id="PDFF" onchange="switchSetting('PDFF')">
+                <label for="PDFF"><div class="choice">PDF file</div></label>
+            </div>
+            <h3 style="margin: 12.5px 0px;">Setting</h3>
+            <div class="setting-choice">
+                <div id="optionCCC"><p>Click icon to copy</p></div>
+                <% if(generate != null){ %>
+                    <%- include('../partials/OIP.ejs') %>
+                <% } %>
+                <div id="optionPDFF" style="display: none;">
+                    <div style="flex-direction: column;">
+                        <label for="TPDFF">Title</label>
+                        <input type="text" id="TPDFF" placeholder="File title" onkeyup="fillText('title')">
+                    </div>
+                    <div style="flex-direction: column;">
+                        <label for="OPDFF">Opening</label>
+                        <textarea id="OPDFF" placeholder="File opening" onkeyup="fillText('opening')"></textarea>
+                    </div>
+                    <div style="flex-direction: column;">
+                        <p>Example</p>
+                        <div style="width: 100%;">
+                            <p>Colors</p>
+                            <input type="checkbox" id="OEPDFF1" onchange="examplePDF()">
+                            <label for="OEPDFF1"><div class="option"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="#0f0f0f"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></div></label>
+                        </div>
+                        <div style="width: 100%;">
+                            <p>Bar chart</p>
+                            <input type="checkbox" id="OEPDFF2" onchange="examplePDF()">
+                            <label for="OEPDFF2"><div class="option"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="#0f0f0f"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></div></label>
+                        </div>
+                        <div style="width: 100%;">
+                            <p>Line chart</p>
+                            <input type="checkbox" id="OEPDFF3" onchange="examplePDF()">
+                            <label for="OEPDFF3"><div class="option"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="#0f0f0f"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></div></label>
+                        </div>
+                        <div style="width: 100%;">
+                            <p>Pie chart</p>
+                            <input type="checkbox" id="OEPDFF4" onchange="examplePDF()">
+                            <label for="OEPDFF4"><div class="option"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="#0f0f0f"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></div></label>
+                        </div>
+                    </div>
+                    <div style="flex-direction: column;">
+                        <label for="CPDFF">Closing</label>
+                        <textarea id="CPDFF" placeholder="File closing" onkeyup="fillText('closing')"></textarea>
+                    </div>
+                </div>
+                <br>
+                <h5 style="text-align: center; display: none; margin-left: -25px;"></h5>
+                <br>
+                <div class="save-file"><button class="button button-cta" id="saves" style="display: none;">Save</button></div>
+            </div>
+        </div>
+        <div class="preview" id="preview">
+            <% if(generate != null){ %> 
+                <input type="text" id="PI1" value="<%= generate.color1 %>">
+                <input type="text" id="PI2" value="<%= generate.color2 %>">
+                <input type="text" id="PI3" value="<%= generate.color3 %>">
+                <input type="text" id="PI4" value="<%= generate.color4 %>">
+                <input type="text" id="PI5" value="<%= generate.color5 %>">
+                <input type="text" id="PI6" value="<%= generate.color6 %>">
+                <input type="text" id="PI7" value="<%= generate.color7 %>">
+                <input type="text" id="PI8" value="<%= generate.amount %>">
+            <% } %> 
+        </div>
+    </div>
+</div>
+<% if(generate != null){ %> 
+    <div id="backgroundPopup"></div>
+    <div id="popup">
+        <h2>Share to <a href="../gallery" target="blank">Gallery</a>?</h2>
+        <div onclick="doneSave('close')">
+            <svg xmlns="http://www.w3.org/2000/svg" height="37.5px" viewBox="0 0 25 25" width="37.5px" fill="var(--background-white)" class="button button-ncta-ball"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>            
+        </div>
+        <br>
+        <p>Hey there! Do you want to share your color palette on the Gallery?</p>
+        <p>It would be great if other people saw your amazing palette</p>
+        <br>
+        <a href="../post/<%= generate.id %>" class="button button-cta" onclick="sessionStorage.removeItem('temporaryCode')">Sure</a>
+        <br>
+        <form method="POST" action="/save/<%= generate.id %>?_method=DELETE">
+            <button type="submit" class="button button-lcta" onclick="sessionStorage.clear()">Maybe later</button>
+        </form>
+    </div>
+<% } %> 

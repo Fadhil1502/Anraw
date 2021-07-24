@@ -1,5 +1,5 @@
 :root{
-    --hue: 36;
+    --hue: 35;
     --main-title-font-size: 64px;
     --title-font-size: 36px;
     --font-size: 24px;
@@ -11,7 +11,7 @@
     --cta-button-hover: hsl(var(--hue), 100%, 62.5%);
     --ncta-button: none;
     --ncta-button-hover: hsl(var(--hue), 100%, 62.5%);
-    --background: hsl(var(--hue), 0%, 6%);
+    --background: hsl(var(--hue), 0%, 5%);
     --background-orange: hsl(var(--hue), 100%, 50%);
     --background-white: hsl(var(--hue), 100%, 100%);
     --margin-super: 50px;

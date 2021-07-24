@@ -1,0 +1,49 @@
+<div id="optionIP" style="display: none;">
+    <div>
+        <label for="NIPS">Slide</label>
+        <input type="number" id="NIPS" min="1" max="10" value="1" autocomplete="off" onchange="reloadSlide()">
+    </div>
+    <div id="slides" style="flex-direction: column;"></div>
+    <div style="flex-direction: column;">
+        <p>All color style</p>
+        <div class="all-color-style" style="width: 100%; margin: 6.25px 0px;">
+            <input type="radio" name="allColorStyle" id="horizontal" checked onchange="reloadSlide(horizontal)" value="horizontal">
+            <label for="horizontal"><div class="style">H</div></label>
+            <input type="radio" name="allColorStyle" id="vertical" onchange="reloadSlide(vertical)" value="vertical">
+            <label for="vertical"><div class="style">V</div></label>
+        </div>
+    </div>
+    <div style="flex-direction: column;">
+        <p>Colors info</p>
+        <div style="width: 100%;">
+            <p>Hex</p>
+            <input type="checkbox" id="OCIIP1" checked onchange="reloadSlide(OCIIP1)" value="OCIIP">
+            <label for="OCIIP1"><div class="option"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="#0f0f0f"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></div></label>
+        </div>
+        <div style="width: 100%;">
+            <p>RGB</p>
+            <input type="checkbox" id="OCIIP2" onchange="reloadSlide(OCIIP2)" value="OCIIP">
+            <label for="OCIIP2"><div class="option"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="#0f0f0f"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></div></label>
+        </div>
+        <div style="width: 100%;">
+            <p>HSL</p>
+            <input type="checkbox" id="OCIIP3" onchange="reloadSlide(OCIIP3)" value="OCIIP">
+            <label for="OCIIP3"><div class="option"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="#0f0f0f"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></div></label>
+        </div>
+    </div>
+    <div style="flex-direction: column;">
+        <label for="MIP">Message</label>
+        <textarea id="MIP" placeholder="Any message?" onchange="reloadSlide(MIP)"></textarea>
+    </div>
+    <div style="flex-direction: column;">
+        <label for="CIPC">Credit</label>
+        <input type="text" id="CIPC" placeholder="Your Instagram" onchange="reloadSlide(CIPC)">
+    </div>
+    <div style="flex-direction: column;">
+        <p>Hashtag</p>
+        <div style="display: flex; align-items: center;">
+            <input type="text" id="HIP" style="border-radius: 25px 0px 0px 25px; width: 75%; height: 50px;">
+            <label for="HIP" onclick="copyColor(HIP)" style="width: 25%; height: 50px; background: var(--background-orange); border-radius: 0px 25px 25px 0px; display: flex; align-items: center; justify-content: center;"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="var(--background-white)"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></label>
+        </div>
+    </div>
+</div>

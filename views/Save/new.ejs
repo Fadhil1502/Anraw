@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs') %>
+<div id="saveN">
+    <h1>Oops ID's missing</h1>
+    <br>
+    <p>Seem like you don't have a color palette</p>
+    <br>
+    <p>Would you like to create one?</p>
+    <a href="/generate"><button class="button button-cta" style="width: 500px; height: 75px;">Create color pallette</button></a>
+    <br>
+    <p>Maybe you like to see others color palette?</p>
+    <a href="/gallery"><button class="button button-lcta" style="width: 500px; height: 75px;">Visit gallery</button></a>
+    <br>
+    <p>Do you have any Anraw code?</p>
+    <div class="form">
+        <input type="text" id="anrawCode" name="code" required placeholder="5#ffffff#9500ff#ff9500#00ff95#0d0d0d">
+        <button type="submit" class="button button-cta" onclick="anrawCode()"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="var(--background-white)"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg></button>
+    </div>
+    <p id="errorCode" style="color: var(--background-orange);"></p>
+    <br>
+    <p>You can find it in <a href="https://www.instagram.com/explore/tags/anraw" class="saveA" target="blank">Instagram</a> or exactly at <a href="https://instagram.com/anraw_palette" class="saveA" target="blank">Anraw Instagram account</a></p>
+</div>
+<%- include('./index.ejs') %>

@@ -27,7 +27,7 @@
     transition: 1s ease-in-out;
 }
 
-.input-color{
+.generate .input-color{
     width: 150px;
     height: 150px;
     border-radius: 25px;
@@ -37,48 +37,48 @@
     transition: 0.5s ease-in-out;
 }
 
-.finish-color .input-color div{
+.generate .finish-color .input-color div{
     opacity: 0%;
     transition: 0.5s ease-in-out;
 }
 
-.finish-color .input-color + .color-setting{
+.generate .finish-color .input-color + .color-setting{
     opacity: 0%;
     transition: 0.5s ease-in-out;
 }
 
-.finish-color #finishInput div{
+.generate .finish-color #finishInput div{
     opacity: 0%;
     transition: 0.5s ease-in-out;
 }
 
-.finish-color #finishInput + .color-setting{
+.generate .finish-color #finishInput + .color-setting{
     opacity: 0%;
     transition: 0.5s ease-in-out;
 }
 
-.input-color:hover{
+.generate .input-color:hover{
     transform: translateY(-25px);
     box-shadow: 0px 5px 10px var(--background-white);
 }
 
-.finish-color:hover .input-color div{
+.generate .finish-color:hover .input-color div{
     opacity: 100%;
 }
 
-.finish-color:hover .input-color + .color-setting{
+.generate .finish-color:hover .input-color + .color-setting{
     opacity: 100%;
 }
 
-.finish-color:hover #finishInput div{
+.generate .finish-color:hover #finishInput div{
     opacity: 100%;
 }
 
-.finish-color:hover #finishInput + .color-setting{
+.generate .finish-color:hover #finishInput + .color-setting{
     opacity: 100%;
 }
 
-.input-color input{
+.generate .input-color input{
     width: 175px;
     height: 175px;
     cursor: pointer;
@@ -87,24 +87,24 @@
     border: none;
 }
 
-.Pmain-color{
+.generate .Pmain-color{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: calc((100vh - 150px) / 4) 0 50px 0;
+    margin: var(--margin-super);
 }
 
-.Pmain-color .Pinput{
+.generate .Pmain-color .Pinput{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.Pmain-color .input{
+.generate .Pmain-color .input{
     display: flex;
 }
 
-.basic-input{
+.generate .basic-input{
     height: 25px;
     margin: calc(var(--margin-small) / 2);
     border-radius: 25px;
@@ -115,47 +115,47 @@
     font-size: var(--lessreadble-font-size);
 }
 
-.large-input {
+.generate .large-input {
     width: 100%;
 }
 
-.small-input{
+.generate .small-input{
     width: 75px;
 }
 
-.random{
+.generate .random{
     font-size: var(--lessreadble-font-size);
     text-align: center;
     transition: 0.25s ease-in-out;
 }
 
-.random:hover{
+.generate .random:hover{
     letter-spacing: 2.5px;
 }
 
-.random b{
+.generate .random b{
     cursor: pointer;
 }
 
-#back{
+.generate #back{
     position: fixed;
     bottom: 50px;
     left: 50px;
 }
 
-#reset{
+.generate #reset{
     position: fixed;
     bottom: 50px;
     left: calc((100vw - 100px) / 2);
 }
 
-#next{
+.generate #next{
     position: fixed;
     bottom: 50px;
     right: 50px;
 }
 
-.progress{
+.generate .progress{
     width: 25px;
     height: 250px;
     position: fixed;
@@ -165,7 +165,7 @@
     border-radius: 25px;
 }
 
-#progress{
+.generate #progress{
     width: 100%;
     height: 25px;
     background: var(--background-orange);
@@ -173,7 +173,7 @@
     transition: 1s ease-in-out;
 }
 
-.Pradio{
+.generate .Pradio{
     display: flex;
     justify-content: center;
     margin-top: var(--margin-super);
@@ -183,7 +183,7 @@
     display: none;
 }
 
-.radio-label{
+.generate .radio-label{
     width: 150px;
     height: 150px;
     border-radius: 25px;
@@ -197,7 +197,7 @@
     transition: 0.25s ease-in-out;
 }
 
-.radio-label:hover{
+.generate .radio-label:hover{
     background: var(--background-orange);
     color: var(--background-white);
 }
@@ -207,7 +207,7 @@
     background: var(--background-orange);
 }
 
-#colorAmount{
+.generate #colorAmount{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -216,14 +216,14 @@
     margin: var(--margin-small);
 }
 
-#colorAmount .color{
+.generate #colorAmount .color{
     width: 50px;
     height: 50px;
     border-radius: 25px;
     margin: calc(var(--margin-small) / 2);
 }
 
-#finishInput{
+.generate #finishInput{
     width: 150px;
     height: 150px;
     border-radius: 25px;
@@ -232,7 +232,7 @@
     background: #ff9900;
 }
 
-#allColor{
+.generate #allColor{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -240,29 +240,29 @@
     margin: var(--margin-super) 0px;
 }
 
-#allColor div{
+.generate #allColor div{
     margin: calc(var(--margin-small) / 2);
 }
 
-#allColor div div div{
+.generate #allColor div div div{
     margin: 0px;
 }
 
-#allColor div input[type = checkbox]{
+.generate #allColor div input[type = checkbox]{
     display: none;
 }
 
-#allColor div input[type = checkbox]:checked + label .button-lcta-ball{
+.generate #allColor div input[type = checkbox]:checked + label .button-lcta-ball{
     background: var(--background-orange);
 }
 
-.color-setting{
+.generate .color-setting{
     display: flex;
     align-items: flex-start;
     justify-content: space-evenly;
 }
 
-.finish{
+.generate .finish{
     width: 100px;
     display: flex;
     align-items: center;
