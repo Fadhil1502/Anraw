@@ -23,6 +23,13 @@ router.put('/:id', async (req, res) => {
         generate.allowSave = req.body.allowSave
         generate.allowQuickSave = req.body.allowQuickSave
         generate.linkInstagram = req.body.linkInstagram
+        if(req.body.accountInstagram.includes('@')){
+            generate.accountInstagram = req.body.accountInstagram.split('@')[1]
+        }
+        else{
+            generate.accountInstagram = req.body.accountInstagram
+        }
+        generate.posted = true;
         await generate.save()
         res.redirect('/gallery')
     }

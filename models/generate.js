@@ -47,6 +47,9 @@ const generateSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
+    accountInstagram: {
+        type: String
+    },
     dateCreated: {
         type: Date,
         required: true,

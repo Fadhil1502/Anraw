@@ -1,3 +1,11 @@
+.post svg, .post path, .post g, .post rect{
+    cursor: pointer;
+}
+
+.post input[type = checkbox]{
+    display: none;
+}
+
 .post{
     width: 100%;
     display: flex;
@@ -8,4 +16,125 @@
 
 .post h2{
     margin-bottom: var(--margin-super);
+}
+
+.post .candidate-post{
+    width: 750px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--background-white);
+    box-shadow: 0px 0px 5px var(--background-white);
+    border-radius: 50px 50px 0px 0px;
+    margin: 25px 0px;
+}
+
+.post #colors{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50px 50px 0px 0px;
+    overflow: hidden;
+}
+
+.post #colors div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post #colors div input{
+    width: 50%;
+    border: none;
+    background: var(--background);
+    padding: 12.5px;
+    border-radius: 25px;
+    opacity: 0%;
+    color: var(--font-color);
+    font-size: var(--font-size);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.post #colors div:hover input{
+    width: 100%;
+    padding: 12.5px 25%;
+    opacity: 100%;
+}
+
+.post #settings{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 25px
+}
+
+.post #settings input{
+    width: 525px;
+    height: 100%;
+    border: none;
+    color: var(--background);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: var(--font-size);
+    cursor: text;
+    margin-left: 25px;
+}
+
+.post #settings div{
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.post .candidate-setup{
+    width: 750px;
+    display: flex;
+}
+
+.post .candidate-setup .div{
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 0;
+    padding: 0px 25px;
+}
+
+.post .candidate-setup input[type = text]{
+    background: var(--background-orange);
+    border: none;
+    border-radius: 25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: var(--font-size);
+    color: var(--font-color);
+    cursor: text;
+    padding: 0px 25px;
+}
+
+.post .setup{
+    width: 25px;
+    height: 25px;
+    background: var(--background);
+    border-radius: 5px;
+    border: 1px solid var(--background-orange);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.post .setup:hover{
+    border-radius: 25px;
+    background: var(--background-orange);
+}
+
+.post .candidate-setup input[type = checkbox]:checked + label .setup{
+    background: var(--background-orange);
 }

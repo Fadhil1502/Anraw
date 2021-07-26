@@ -3,7 +3,7 @@ Gallery
 <% generate.forEach(color => { %>
     <!-- Use if statement later -->
         <div>
-            <%= color.color1 %> <%= color.color2 %> <%= color.color3 %> <%= color.color4 %> <%= color.color5 %> <%= color.color6 %> <%= color.color7 %> <%= color.amount %>
+            <%= color.color1 %> <%= color.color2 %> <%= color.color3 %> <%= color.color4 %> <%= color.color5 %> <%= color.color6 %> <%= color.color7 %> <%= color.amount %> <%= color.title %> <%= color.creator %> <%= color.allowSave %> <%= color.allowQuickSave %> <%= color.linkInstagram %> <%= color.accountInstagram %> <%= color.dateCreated %> <%= color.posted %>
             <!-- Remove when done -->
             <form method="POST" action="/gallery/<%= color.id %>?_method=DELETE">
                 <button type="submit">DELETE</button>
