@@ -37,15 +37,15 @@ const generateSchema = new mongoose.Schema({
     },
     allowSave: {
         type: Boolean,
-        default: true
+        default: false
     },
     allowQuickSave: {
         type: Boolean,
-        default: true
+        default: false
     },
     linkInstagram: {
         type: Boolean,
-        default: true
+        default: false
     },
     accountInstagram: {
         type: String

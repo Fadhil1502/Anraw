@@ -4,9 +4,21 @@ const Generate = require('../models/generate')
 
 // All Color
 router.get('/', async (req, res) => {
+    let searchData = Generate.find()
+    let generate
+    const dateNow = new Date()
+    if(req.query.creator != null && req.query.creator !== ''){
+        searchData = searchData.regex('creator', new RegExp(req.query.creator, 'i'))
+    }
+    if(req.query.title != null && req.query.title !== ''){
+        searchData = searchData.regex('title', new RegExp(req.query.title, 'i'))
+    }
     try{
-        const generate = await Generate.find({})
-        res.render('gallery/index', { generate: generate })
+        generate = await searchData.sort({ dateCreated: 'desc' }).exec()
+        res.render('gallery/index', { 
+            generate: generate,
+            searchData: req.query
+        })
     }
     catch{
         res.redirect('/')

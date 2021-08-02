@@ -4,6 +4,7 @@
 @import url('shared/generate.css');
 @import url('shared/save.css');
 @import url('shared/post.css');
+@import url('shared/gallery.css');
 
 @keyframes loadingL{
     0%{
