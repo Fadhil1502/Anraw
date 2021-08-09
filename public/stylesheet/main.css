@@ -1,6 +1,8 @@
 @import url('shared/variable.css');
 @import url('shared/button.css');
 @import url('shared/header.css');
+@import url('shared/footer.css');
+@import url('shared/palette.css');
 @import url('shared/generate.css');
 @import url('shared/save.css');
 @import url('shared/post.css');
@@ -68,7 +70,6 @@
 
 body{
     background: var(--background);
-    /* background: linear-gradient(to bottom, var(--background-orange), var(--background)); */
     color: var(--font-color);
     font-size: var(--font-size);
     overflow: hidden;
@@ -76,6 +77,8 @@ body{
 
 h1{
     font-size: var(--main-title-font-size);
+    color: var(--highlight-font-color);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 h2{
@@ -128,105 +131,161 @@ input:focus, select, textarea{
     animation: loadingT 5s ease-in-out infinite 1s;
 }
 
-header{
-    top: 0;
-    left: 0;
-    position: sticky;
-    background: var(--background);
-    box-shadow: 0px 0px 25px var(--background);
-    padding: 25px 0px;
-}
-
 .container{
     margin: var(--margin-super);
 }
 
-.title{
-    color: var(--highlight-font-color);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+section{
+    width: 100%;
+    padding: 25px 0px;
+    background: var(--background);    
 }
 
-.main{
+section:nth-child(odd){
+    text-align: right;
+    background: hsl(var(--hue), 0%, 7.5%);
+    padding: 25px;
+    border-radius: 25px;
+}
+
+.opening{
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    margin-top: var(--margin-super);
 }
 
-.fast-feature{
-    width: 285px;
-    height: 285px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-shrink: 0;
-    margin-right: 50px;
+.opening .content{
+    width: 50%;
 }
 
-.fast-feature div{
-    width: 75px;
+.opening .content:nth-child(1) button{
+    width: 100%;
+    max-width: 750px;
     height: 75px;
-    background: var(--background-orange);
-    border-radius: 50%;
-    margin: 15px;
 }
 
-.foot{
-    margin-top: var(--margin-small);
+.opening .content:nth-child(2){
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.review .review-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: scroll;
+}
+
+.review .palette{
+    max-width: 50%;
+    color: var(--background);
+}
+
+.review .colors{
+    flex-direction: column;
+    padding: 25px;
+    font-size: var(--lessreadble-font-size);
+    text-align: left;
+}
+
+.review .colors button{
     font-size: var(--lessreadble-font-size);
 }
 
-.foot p a{
-    color: var(--highlight-font-color);
+.info-generate .step:nth-child(even){
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.info-generate .step div{
+    display: flex;
+    align-items: center;
+}
+
+.info-generate .step a, .info-save div p a{
     text-decoration: none;
+    color: var(--highlight-font-color);
     cursor: pointer;
 }
 
-.foot p a:hover{
+.info-generate .step a:hover, .info-save div p a:hover{
     color: var(--highlight-font-color-hover);
 }
 
-.fast-feature div:nth-child(1){
-    background: white;
-    margin: 0px 15px 15px 0px;
+.info-save svg, .info-save path{
+    cursor: pointer;
 }
 
-.fast-feature div:nth-child(2){
-    margin: 0px 15px 15px 15px;
+.info-save div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
 }
 
-.fast-feature div:nth-child(3){
-    background: white;
-    margin: 0px 0px 15px 15px;
+.info-save input{
+    width: calc(100% - 50px);
+    height: 50px;
+    background: var(--background-orange);
+    border: none;
+    border-radius: 25px 0 0 25px;
+    font-size: var(--font-size);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--font-color);
+    padding: 0 25px;
+    cursor: text;
 }
 
-.fast-feature div:nth-child(4){
-    margin: 15px 15px 15px 0px;
+.info-save button{
+    width: 50px;
+    height: 50px;
+    padding: 12.5px;
+    border-radius: 0 25px 25px 0;
 }
 
-.fast-feature div:nth-child(5){
-    margin: 15px 15px 15px 15px;
+.pr .options{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }
 
-.fast-feature div:nth-child(6){
-    margin: 15px 0px 15px 15px;
+.pr .options div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.fast-feature div:nth-child(7){
-    margin: 15px 15px 0px 0px;
+.pr .options div a{
+    width: 150px;
+    height: 150px;
+    background: var(--background-white);
+    border-radius: 25px;
+    margin: 12.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color: var(--background);
+    box-shadow: 0 5px 5px var(--background);
+    cursor: pointer;
 }
 
-.fast-feature div:nth-child(8){
-    background: white;
-    margin: 15px 15px 0px 15px;
+.pr .options div a svg, .pr .options div a path, .pr .options div a g, .pr .options div a circle, .pr .options div a p{
+    cursor: pointer;
+    transition: 0.25s;
 }
 
-.fast-feature div:nth-child(9){
-    margin: 15px 0px 0px 15px;
+.pr .options div a:hover svg{
+    width: 75px;
+    height: 75px;
+}
+
+.pr .options div a:hover p{
+    font-size: var(--lessreadble-font-size);
 }
 
 @media print{

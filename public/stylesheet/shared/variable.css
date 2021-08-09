@@ -12,7 +12,9 @@
     --ncta-button: none;
     --ncta-button-hover: hsl(var(--hue), 100%, 62.5%);
     --background: hsl(var(--hue), 0%, 5%);
+    --background-purple: hsl(calc(var(--hue) - 120), 100%, 50%);
     --background-orange: hsl(var(--hue), 100%, 50%);
+    --background-green: hsl(calc(var(--hue) + 120), 100%, 50%);
     --background-white: hsl(var(--hue), 100%, 100%);
     --margin-super: 50px;
     --margin-small: 25px;

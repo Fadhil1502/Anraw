@@ -17,7 +17,8 @@ router.get('/', async (req, res) => {
         generate = await searchData.sort({ dateCreated: 'desc' }).exec()
         res.render('gallery/index', { 
             generate: generate,
-            searchData: req.query
+            searchData: req.query,
+            page: 'Gallery - '
         })
     }
     catch{

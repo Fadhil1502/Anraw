@@ -8,10 +8,15 @@
 
 .generate .section{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+}
+
+.generate .section:nth-child(1){
+    margin-top: -50px;
 }
 
 .generate h2{
@@ -38,22 +43,7 @@
     position: relative;
 }
 
-.generate .finish-color .input-color div{
-    opacity: 0%;
-    transition: 0.5s ease-in-out;
-}
-
-.generate .finish-color .input-color + .color-setting{
-    opacity: 0%;
-    transition: 0.5s ease-in-out;
-}
-
-.generate .finish-color #finishInput div{
-    opacity: 0%;
-    transition: 0.5s ease-in-out;
-}
-
-.generate .finish-color #finishInput + .color-setting{
+.generate .finish-color .input-color div,.generate .finish-color .input-color + .color-setting ,.generate .finish-color #finishInput div, .generate .finish-color #finishInput + .color-setting{
     opacity: 0%;
     transition: 0.5s ease-in-out;
 }
@@ -63,19 +53,7 @@
     box-shadow: 0px 5px 10px var(--background-white);
 }
 
-.generate .finish-color:hover .input-color div{
-    opacity: 100%;
-}
-
-.generate .finish-color:hover .input-color + .color-setting{
-    opacity: 100%;
-}
-
-.generate .finish-color:hover #finishInput div{
-    opacity: 100%;
-}
-
-.generate .finish-color:hover #finishInput + .color-setting{
+.generate .finish-color:hover .input-color div, .generate .finish-color:hover .input-color + .color-setting, .generate .finish-color:hover #finishInput div, .generate .finish-color:hover #finishInput + .color-setting{
     opacity: 100%;
 }
 
@@ -138,42 +116,6 @@
     cursor: pointer;
 }
 
-.generate #back{
-    position: fixed;
-    bottom: 50px;
-    left: 50px;
-}
-
-.generate #reset{
-    position: fixed;
-    bottom: 50px;
-    left: calc((100vw - 100px) / 2);
-}
-
-.generate #next{
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-}
-
-.generate .progress{
-    width: 25px;
-    height: 250px;
-    position: fixed;
-    background: var(--background-white);
-    top: calc((100vh - 350px) / 2);
-    right: 12.5px;
-    border-radius: 25px;
-}
-
-.generate #progress{
-    width: 100%;
-    height: 25px;
-    background: var(--background-orange);
-    border-radius: 25px;
-    transition: 1s ease-in-out;
-}
-
 .generate .Pradio{
     display: flex;
     justify-content: center;
@@ -230,7 +172,7 @@
     border-radius: 25px;
     overflow: hidden;
     flex-shrink: 0;
-    background: #ff9900;
+    background: #ff9500;
 }
 
 .generate #allColor{
@@ -268,6 +210,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: absolute;
-    margin-top: calc(100vh - 200px);
+}
+
+.generate .controler{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 25px;
 }

@@ -1,3 +1,14 @@
+header{
+    width: calc(100vw - 12.5px);
+    top: 0;
+    left: 0;
+    position: sticky;
+    background: var(--background);
+    border-bottom: 1px solid var(--background-orange);
+    padding: 25px 12.5px;
+    margin: -50px 0 var(--margin-small) -50px;
+}
+
 .header-title{
     color: var(--highlight-font-color);
     text-decoration: none;

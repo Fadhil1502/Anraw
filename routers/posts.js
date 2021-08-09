@@ -6,7 +6,12 @@ const Generate = require('../models/generate')
 router.get('/:id', async (req, res) => {
     try{
         const generate = await Generate.findById(req.params.id)
-        res.render('post/index', { generate: generate })
+        if(generate.posted){
+            res.render('post/posted', { generate: generate })
+        }
+        else{
+            res.render('post/index', { generate: generate, page: 'Post | ' + req.params.id + ' - ' })
+        }
     }
     catch{
         res.redirect('/')

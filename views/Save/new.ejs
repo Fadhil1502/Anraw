@@ -12,11 +12,12 @@
     <br>
     <p>Do you have any Anraw code?</p>
     <div class="form">
-        <input type="text" id="anrawCode" name="code" required placeholder="5#ffffff#9500ff#ff9500#00ff95#0d0d0d">
-        <button type="submit" class="button button-cta" onclick="anrawCode()"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="var(--background-white)"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg></button>
+        <input type="text" id="anrawCode" placeholder="5#ffffff#00ff95#ff9500#9500ff#0d0d0d">
+        <button class="button button-cta" onclick="anrawCode()"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="var(--background-white)"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg></button>
     </div>
     <p id="errorCode" style="color: var(--background-orange);"></p>
     <br>
     <p>You can find it in <a href="https://www.instagram.com/explore/tags/anraw" class="saveA" target="blank">Instagram</a> or exactly at <a href="https://instagram.com/anraw_palette" class="saveA" target="blank">Anraw Instagram account</a></p>
 </div>
 <%- include('./index.ejs') %>
+<%- include('../partials/footer.ejs') %>

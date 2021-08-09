@@ -4,7 +4,7 @@ const Generate = require('../models/generate')
 
 // New Color Setup
 router.get('/', (req, res) => {
-    res.render('generate/index', { generate: new Generate() })
+    res.render('generate/index', { generate: new Generate(), page: 'Generate - ' })
 })
 
 // New Color Create

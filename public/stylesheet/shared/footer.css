@@ -1,0 +1,39 @@
+footer{
+    width: calc(100vw - 12.5px);
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    background: var(--background);
+    margin: var(--margin-small) 0 -50px -50px;
+    font-size: var(--lessreadble-font-size);
+    border-top: 1px solid var(--background-orange);
+    padding: 25px 12.5px;
+}
+
+footer .social{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .social p a{
+    color: var(--highlight-font-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer .social p a:hover{
+    color: var(--highlight-font-color-hover);
+}
+
+footer .social div a{
+    margin: 0px 12.5px;   
+}
+
+footer .version{
+    text-align: right;
+    text-decoration: none;
+    color: var(--font-color);
+    cursor: pointer;
+}
