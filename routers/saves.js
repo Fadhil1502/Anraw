@@ -7,23 +7,18 @@ router.get('/', (req, res) => {
     res.render('save/new', { generate: null, page: 'Save - ' })
 })
 
-// New Save Setup
+// Save Setup
 router.get('/:id', async (req, res) => {
     try{
         const generate = await Generate.findById(req.params.id)
-        if(generate.posted){
-            res.redirect('/post/' + req.params.id)
-        }
-        else{
-            res.render('save/index', { generate: generate, page: 'Save | ' + req.params.id + ' - ' })
-        }
+        res.render('save/index', { generate: generate, page: 'Save | ' + req.params.id + ' - ' })
     }
     catch{
         res.redirect('/')
     }
 })
 
-// New Save Delete
+// Delete Palette
 router.delete('/:id', async (req, res) => {
     let generate
     try{

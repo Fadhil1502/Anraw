@@ -2,12 +2,12 @@ const express = require('express')
 const router = express.Router()
 const Generate = require('../models/generate')
 
-// New Post Setup
+// Post Setup
 router.get('/:id', async (req, res) => {
     try{
         const generate = await Generate.findById(req.params.id)
         if(generate.posted){
-            res.render('post/posted', { generate: generate })
+            res.render('post/posted', { generate: generate, page: 'Post - ' })
         }
         else{
             res.render('post/index', { generate: generate, page: 'Post | ' + req.params.id + ' - ' })
@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-// New Post Create
+// Create New Post
 router.put('/:id', async (req, res) => {
     let generate
     try{
@@ -51,7 +51,7 @@ router.put('/:id', async (req, res) => {
     }
 })
 
-// New Post Delete
+// Delete Post
 router.delete('/:id', async (req, res) => {
     let generate
     try{

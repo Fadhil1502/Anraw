@@ -12,18 +12,18 @@
 
 .button-cta{
     background: var(--cta-button);
-    transition: 0.25s ease-in-out;
+    transition: 0.25s;
 }
 
 .button-lcta{
     background: var(--ncta-button);
     border: 1px solid var(--cta-button);
-    transition: 0.25s ease-in-out;
+    transition: 0.25s;
 }
 
 .button-ncta{
     background: var(--ncta-button);
-    transition: 0.25s ease-in-out;
+    transition: 0.25s;
 }
 
 .button-cta:hover{
@@ -43,7 +43,7 @@
     border-radius: 50%;
     padding: 6.25px;
     background: var(--cta-button);
-    transition: 0.25s ease-in-out;
+    transition: 0.25s;
 }
 
 .button-lcta-ball{
@@ -51,14 +51,14 @@
     padding: 6.25px;
     background: var(--ncta-button);
     border: 1px solid var(--cta-button);
-    transition: 0.25s ease-in-out;
+    transition: 0.25s;
 }
 
 .button-ncta-ball{
     border-radius: 50%;
     padding: 6.25px;
     background: var(--ncta-button);
-    transition: 0.25s ease-in-out;
+    transition: 0.25s;
 }
 
 .button-cta-ball:hover{

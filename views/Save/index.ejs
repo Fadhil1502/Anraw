@@ -1,7 +1,11 @@
 <div class="save" id="save" style="display: none;">
     <div class="head" id="head">
         <h2>Preview</h2>
-        <p><a class="button button-cta" onclick="doneSave('open')" id="doneButton">Done</a></p>
+        <% if(generate != null){ %>
+            <p><a class="button button-cta" onclick="doneSave('open')">Done</a></p>
+        <% } else { %>
+            <p><a class="button button-cta" href="/gallery">Done</a></p>
+        <% } %> 
     </div>
     <div class="body">
         <div class="setting" id="setting">
@@ -9,7 +13,7 @@
             <div class="save-style">
                 <input type="radio" name="style" id="CCC" checked onchange="switchSetting('CCC')">
                 <label for="CCC"><div class="choice">Copy color code</div></label>
-                <% if(generate != null){ %>
+                <% if(generate != null && generate.posted == false){ %>
                     <%- include('../partials/IPR.ejs') %>
                 <% } %>
                 <input type="radio" name="style" id="PDFF" onchange="switchSetting('PDFF')">
@@ -18,7 +22,7 @@
             <h3 style="margin: 12.5px 0px;">Setting</h3>
             <div class="setting-choice">
                 <div id="optionCCC"><p>Click icon to copy</p></div>
-                <% if(generate != null){ %>
+                <% if(generate != null && generate.posted == false){ %>
                     <%- include('../partials/OIP.ejs') %>
                 <% } %>
                 <div id="optionPDFF" style="display: none;">

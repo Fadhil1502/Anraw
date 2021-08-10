@@ -1,7 +1,3 @@
-.generate{
-    transition: 1s ease-in-out;
-}
-
 .generate svg, .generate path, .generate g, .generate circle{
     cursor: pointer;
 }
@@ -39,13 +35,13 @@
     overflow: hidden;
     flex-shrink: 0;
     margin-right: var(--margin-super);
-    transition: 0.5s ease-in-out;
+    transition: 0.5s;
     position: relative;
 }
 
 .generate .finish-color .input-color div,.generate .finish-color .input-color + .color-setting ,.generate .finish-color #finishInput div, .generate .finish-color #finishInput + .color-setting{
     opacity: 0%;
-    transition: 0.5s ease-in-out;
+    transition: 0.5s;
 }
 
 .generate .input-color:hover{
@@ -105,7 +101,7 @@
 .generate .random{
     font-size: var(--lessreadble-font-size);
     text-align: center;
-    transition: 0.25s ease-in-out;
+    transition: 0.25s;
 }
 
 .generate .random:hover{
@@ -137,7 +133,7 @@
     text-align: center;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.25s ease-in-out;
+    transition: 0.25s;
 }
 
 .generate .radio-label:hover{

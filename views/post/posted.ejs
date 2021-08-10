@@ -1,3 +1,16 @@
-<%- include('./partials/header.ejs') %>
-This post already posted
-<%- include('./partials/footer.ejs') %>
+<%- include('../partials/header.ejs') %>
+<div class="post posted">
+    <h1>Already posted!</h1>
+    <br>
+    <p>Seem like this color palette has already posted</p>
+    <br>
+    <p>Would you like to create one?</p>
+    <a href="/generate"><button class="button button-cta" style="width: 500px; height: 75px;">Create a new color palette</button></a>
+    <br>
+    <p>Maybe you like to see others color palette?</p>
+    <a href="/gallery"><button class="button button-lcta" style="width: 500px; height: 75px;">See others color palette</button></a>
+    <br>
+    <p>Do you want to save this color palette?</p>
+    <a href="/save/<%= generate.id %>"><button class="button button-ncta" style="width: 500px; height: 75px;">Save this color palette</button></a>
+</div>
+<%- include('../partials/footer.ejs') %>

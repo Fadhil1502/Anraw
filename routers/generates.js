@@ -2,12 +2,12 @@ const express = require('express')
 const router = express.Router()
 const Generate = require('../models/generate')
 
-// New Color Setup
+// Setup New Color
 router.get('/', (req, res) => {
     res.render('generate/index', { generate: new Generate(), page: 'Generate - ' })
 })
 
-// New Color Create
+// Save New Color
 router.post('/', async (req, res) => {
     const generate = new Generate({
         color1: req.body.color1,

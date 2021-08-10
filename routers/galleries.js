@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 })
 
 // REMOVE THIS AFTER USE
-// New Post Delete
+// Delete Post
 router.delete('/:id', async (req, res) => {
     let generate
     try{

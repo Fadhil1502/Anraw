@@ -98,6 +98,10 @@ h2{
     background: var(--background-white);
 }
 
+::-webkit-scrollbar-track{
+    background: hsl(var(--hue), 0%, 7.5%);
+}
+
 ::-webkit-input-placeholder{
     color: var(--background);
 }

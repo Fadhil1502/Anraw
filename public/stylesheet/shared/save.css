@@ -2,7 +2,7 @@
     cursor: pointer;
 }
 
-.save input[type=checkbox], .save input[type=radio]{
+.save input[type = checkbox], .save input[type = radio]{
     display: none;
 }
 
@@ -50,7 +50,7 @@
     padding: 10px 25px 10px 75px;
     border-radius: 0px 25px 25px 0px;
     cursor: pointer;
-    transition: 0.25s ease-in-out;
+    transition: 0.25s;
 }
 
 .save .choice:hover{
@@ -72,7 +72,7 @@
     border-radius: 25px;
     padding: 5px 25px;
     cursor: pointer;
-    transition: 0.25s ease-in-out;
+    transition: 0.25s;
 }
 
 .save .style:hover{
@@ -99,7 +99,7 @@
     border-radius: 5px;
     border: 1px solid var(--background-orange);
     cursor: pointer;
-    transition: 0.5s ease-in-out;
+    transition: 0.5s;
 }
 
 .save .option:hover{
