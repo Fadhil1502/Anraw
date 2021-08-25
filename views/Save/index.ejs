@@ -1,10 +1,10 @@
 <div class="save" id="save" style="display: none;">
     <div class="head" id="head">
         <h2>Preview</h2>
-        <% if(generate != null){ %>
-            <p><a class="button button-cta" onclick="doneSave('open')">Done</a></p>
-        <% } else { %>
+        <% if(generate != null && generate.posted){ %>
             <p><a class="button button-cta" href="/gallery">Done</a></p>
+        <% } else { %>
+            <p><a class="button button-cta" onclick="doneSave('open')">Done</a></p>
         <% } %> 
     </div>
     <div class="body">

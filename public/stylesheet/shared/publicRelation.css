@@ -1,0 +1,145 @@
+.public-relation svg, .public-relation path, .public-relation g, .public-relation circle, .public-relation .service div a p{
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.public-relation ul{
+    margin-left: 25px;
+}
+
+.public-relation #anrawTimeDiv{
+    background: var(--background-orange);
+    text-align: center;
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.public-relation .service div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.public-relation .service div a{
+    width: 150px;
+    height: 150px;
+    background: var(--background-white);
+    border-radius: 25px;
+    margin: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--background);
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.public-relation .service div a:hover svg{
+    width: 75px;
+    height: 75px;
+}
+
+.public-relation .service div a:hover p{
+    font-size: var(--lessreadble-font-size);
+}
+
+.public-relation form input, .public-relation form textarea{
+    border: none;
+    border-radius: 25px;
+    background: var(--background-orange);
+    padding: 25px;
+    font-size: var(--font-size);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--font-color);
+    cursor: text;
+}
+
+.public-relation form input[type = radio], .public-relation form input[type = checkbox]{
+    opacity: 0;
+    cursor: default;
+}
+
+.public-relation form .star svg{
+    border-radius: 25px;
+    box-shadow: 0px 0px 5px var(--background-white);
+    transition: 0.5s;
+}
+
+.public-relation form .suggest{
+    height: 50px;
+    padding: 0px 25px;
+    border-radius: 25px;
+    background: var(--background);
+    border: 1px solid var(--background-orange);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.public-relation form .star svg:hover{
+    box-shadow: 0px 0px 5px var(--background-orange);
+}
+
+.public-relation form .suggest:hover{
+    background: var(--background-orange);
+}
+
+.public-relation form input[type = radio]:checked + .star svg{
+    box-shadow: 0px 0px 10px var(--background-orange);
+}
+
+.public-relation form input[type = checkbox]:checked + .suggest{
+    background: var(--background-orange);
+}
+
+.public-relation .blog span a{
+    text-decoration: none;
+    color: var(--highlight-font-color);
+    cursor: pointer;
+}
+
+.public-relation .version{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.public-relation .version a{
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+    background: var(--background-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--background);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.public-relation .version a p{
+    cursor: pointer;
+}
+
+.public-relation .version a:hover{
+    border-radius: 50%;
+    color: var(--highlight-font-color);
+}
+
+.public-relation ul li a{
+    text-decoration: none;
+    color: var(--highlight-font-color);
+    cursor: pointer;
+}
+
+.public-relation ul li a:hover{
+    color: var(--highlight-font-color-hover);
+}
+
+.public-relation form ol li a{
+    text-decoration: none;
+    color: var(--highlight-font-color);
+    cursor: pointer;
+}

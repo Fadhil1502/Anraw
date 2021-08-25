@@ -1,0 +1,225 @@
+<div class="blog">
+    <h1><%= blogSubject %></h1>
+    <br>
+    <% if(blogSubject == "Contact"){ %>
+        <h2>Anraw</h2>
+        <p>Email: <span><a href="mailto:anrawofficial@gmail.com" target="blank">anrawofficial@gmail.com</a></span></p>
+        <p>Instagram: <span><a href="https://instagram.com/anraw_palette" target="blank">anraw_palette</a></span></p>
+        <br>
+        <h2>Team</h2>
+        <br>
+        <h3>Said Ahmad Fadhilah (Founder, Developer, Instagram Specialist, Public Relations)</h3>
+        <p>Bio: <br><span>Hi, there! My name Said Ahmad Fadhilah you can call me Fadhil. I'm founder, developer, Instagram specialist, and public relations of Anraw. For now I am working alone, maybe in the future Anraw will open job recruitment so that we can work as a team. Follow my Instagram below for job news.</span></p>
+        <br>
+        <p>Discord: <span><a href="https://discord.com/users/651303374855208963" target="blank">SaidAhmad</a></span></p>
+        <p>Email: <span><a href="mailto:fadhil1704udiman@gmail.com" target="blank">fadhil1704udiman@gmail.com</a></span></p>
+        <p>Instagram: <span><a href="https://instagram.com/fadhil_1502_" target="blank">fadhil_1502_</a></span></p>
+        <p>Line: <span><a href="https://line.me/ti/p/~said1704" target="blank">said1704</a></span></p>
+    <% } %>
+    <% if(blogSubject == "Version"){ %>
+        <div class="version">
+            <a href="/pr/version/v1">
+                <p>v_1.x.x</p>
+            </a>
+        </div>
+    <% } %>
+    <% if(blogSubject == "Version 1xx"){ %>
+        <h2>1.0.0</h2>
+        <p>What's new?</p>
+        <ul>
+            <li>Add <a href="/">Landing Page</a></li>
+            <ul>
+                <li>Add quick generator color palette</li>
+                <li>Add review column</li>
+                <li>Add section to input Anraw code</li>
+                <li>Add small public relation section</li>
+            </ul>
+            <li>Add <a href="/generate">Generate</a> page</li>
+            <ul>
+                <li>Add select main color section</li>
+                <li>Add select many color section</li>
+                <li>Add finishing section</li>
+            </ul>
+            <li>Add <a href="/save">Save</a> page</li>
+            <ul>
+                <li>Add copy color code option</li>
+                <li>Add Instagram post option</li>
+                <li>Add save as PDF option</li>
+                <li>Add <a href="/save">save</a> base on Anraw code option</li>
+            </ul>
+            <li>Add <a href="/post">Post</a> page</li>
+            <ul>
+                <li>Add allow save setting</li>
+                <li>Add allow quick save setting</li>
+                <li>Add link to Instagram setting</li>
+            </ul>
+            <li>Add <a href="/gallery">Gallery</a> page</li>
+            <ul>
+                <li>Add AI to generate color palette automatically</li>
+                <li>Add color palette search engine</li>
+            </ul>
+            <li>Add <a href="/pr">Public Relation</a> page</li>
+            <ul>
+                <li>Add <a href="/pr/give/message">message</a> section</li>
+                <li>Add <a href="/pr/give/review">review</a> section</li>
+                <li>Add <a href="/pr/give/suggestion">suggestion</a> section</li>
+                <li>Add <a href="/pr/contact">contact</a> section</li>
+                <li>Add <a href="/pr/version">version</a> section</li>
+                <li>Add <a href="/pr/report/bug">report bug</a> section</li>
+                <li>Add <a href="/pr/disrespectful/language">disrespectful language</a> section</li>
+                <li>Add <a href="/pr/tutorial/generate">generate tutorial</a> section</li>
+                <li>Add <a href="/pr/tutorial/save">save tutorial</a> section</li>
+                <li>Add <a href="/pr/tutorial/post">post tutorial</a> section</li>
+                <li>Add <a href="/pr/tutorial/gallery">gallery tutorial</a> section</li>
+            </ul>
+        </ul>
+    <% } %>
+    <% if(blogSubject == "How to Generate"){ %>
+        <h2>Generate color palette</h2>
+        <ol>
+            <li>Go to <span><a href="/generate" target="blank">Generate</a></span></li>
+            <li>Select your main color</li>
+            <p>After open generate page, you will see the first section.</p>
+            <p>By clicking on the orange square you can choose one of 10 million colors, you can also enter hex, rgb, and hsl codes.</p>
+            <p>Too much choices? Just click on the word "Surprise me" and Anraw instantly picks you a random color.</p>
+            <li>Choose the number of color</li>
+            <p>After selecting the main color scroll down until you see "Select how many colors you want", in this section you can choose your number of colors.</p>
+            <p>Just by clicking on the number you choose, Anraw instantly uses color theory to choose the best combination for you.</p>
+            <p>Don't know how much you need? Just click on the word "It's up to you" and Anraw will pick the number at random.</p>
+            <li>Finishing you palette</li>
+            <p>Having finished with the previous two sections, this is the final step.</p>
+            <p>In this section you can:</p>
+            <ul>
+                <li>Add more colors (max 7) by just clicking the plus (+) button then Anraw will add new colors and adjust them to make cool color transitions, don't worry you can still customize it yourself by clicking the color,</li>
+                <li>You can also adjust the position of your color by hovering near the color and it will bring up arrow buttons then you can click on it to make your color move,</li>
+                <li>There is a shuffle button there too so you can shuffle your colors, but don't forget to lock the colors you don't want to randomize, the lock button is located between the arrow buttons,</li>
+                <li>And lastly you can delete your color if you don't want to use it, delete button located at the top right of the color just hover over the color and you will see it.</li>
+            </ul>
+            <p>And there you have it you can click finish button to copy the color code, create an Instagram post, or save it to pdf.</p>
+        </ol>
+    <% } %>
+    <% if(blogSubject == "How to Save"){ %>
+        <h2>Copy color code</h2>
+        <ol>
+            <p>Before we start you must have color palette and know <span><a href="/pr/tutorial/generate">How to Generate</a></span>.</p>
+            <li><span><a href="/generate" target="blank">Generate</a></span> color palette</li>
+            <li>Click the copy icon</li>
+            <p>Click the copy icon to the right of the color code you want to copy.</p>
+            <p>Yeah, very simple.</p>
+        </ol>
+        <br>
+        <h2>Create Instagram post</h2>
+        <ol>
+            <p>Before we start you must have color palette and know <span><a href="/pr/tutorial/generate">How to Generate</a></span>.</p>
+            <li><span><a href="/generate" target="blank">Generate</a></span> color palette</li>
+            <li>Go to Instagram post menu</li>
+            <p>Click "Instagram post", then a menu will appear and a preview of your post will appear.</p>
+            <li>Choose how many you want your slides</li>
+            <p>In the settings section you can find slide options, you can increase or decrease the number determine how many you want.</p>
+            <p>After selecting the number of your slides, you can see in your preview the slides are increasing or decreasing.</p>
+            <li>Customize your slides</li>
+            <p>After adding or subtracting your slides, you can see the options that appear for each of your slides.</p>
+            <p>You can set it however you like, whether it's all colors, messages, credits, or single colors.</p>
+            <p>You can see preview change according to your choice.</p>
+            <li>Select style of your all color slide</li>
+            <p>If you select "All Colors" on one of your slides, you can choose either horizontal(H) or vertical(V) style.</p>
+            <li>Set your color code info</li>
+            <p>If you select "Color" on one of the slides, you can choose a Hex, RGB, or HSL code.</p>
+            <li>Write you message</li>
+            <p>If you select "Message" on one of the slides, you can write a message in your post.</p>
+            <li>Set credit</li>
+            <p>If you select "Credits" on any of the slides, you can write credit to Anraw who helped you choose a color palette and create this Instagram post.</p>
+            <li>Copy the hashtag</li>
+            <p>Before we finish you can copy the hashtags generated by Anraw.</p>
+            <li>Click save</li>
+            <p>When you click the 'Save' button, you will be asked about 'Download multiple files' click allow to download all slides.</p>
+            <p>And that's it now you can post it on Instagram.</p>
+        </ol>
+        <br>
+        <h2>Save as PDF</h2>
+        <ol>
+            <p>Before we start you must have color palette and know <span><a href="/pr/tutorial/generate">How to Generate</a></span>.</p>
+            <li><span><a href="/generate" target="blank">Generate</a></span> color palette</li>
+            <li>Go to PDF file menu</li>
+            <p>Click "PDF file", then a menu will appear and a preview of your PDF will appear.</p>
+            <li>Set title</li>
+            <p>Title is used to identify your file.</p>
+            <li>Set opening</li>
+            <p>Opening is used to describe your color.</p>
+            <li>Set example</li>
+            <p>Examples are used to create your color display in a bar, line, or pie chart.</p>
+            <li>Set closing</li>
+            <p>Closing is used to end your file.</p>
+            <li>Click save</li>
+            <p>When you click the 'Save' button, it will show print menu so you can choose to print or save as pdf and if some colors are not present go to more settings then turn on background graphics.</p>
+            <p>And that's all the PDF file contains the date so you can prove that you are the first creator of this color palette.</p>
+        </ol>
+        <br>
+        <h2>Use Anraw code</h2>
+        <ol>
+            <li>Find the code</li>
+            <p>The Anraw code can be found in the credit post, exactly in <span><a href="https://instagram.com/explore/tags/anraw" target="blank">Instagram</a></span> or <span><a href="https://instagram.com/anraw_palette" target="blank">Anraw Instagram account</a></span>.</p>
+            <li>Remember the code</li>
+            <li>Go to <span><a href="/save" target="blank">Save</a></span> page</li>
+            <p>You not to have color palette, just type "anraw.herukoapp.com/save" on the link</p>
+            <li>Write code in input area</li>
+            <p>Make sure your code is right.</p>
+            <li>Click arrow button</li>
+            <p>That's it, keep in mind that the code that is being used comes from Instagram, so you can't make Instagram posts again against this color palette.</p>
+        </ol>
+    <% } %>
+    <% if(blogSubject == "How to Post"){ %>
+        <h2>Setup post</h2>
+        <ol>
+            <p>Before we start you must have color palette and know <span><a href="/pr/tutorial/generate">How to Generate</a></span> and <span><a href="/pr/tutorial/save">How to Save</a></span>.</p>
+            <li><span><a href="/generate" target="blank">Generate</a></span> color palette</li>
+            <li>Finishing save</li>
+            <p>Once you have finished saving your color palette, you can click the done button, then a popup will appear, click sure to proceed to the post page.</p>
+            <li>Set the title</li>
+            <p>Title are important to make it easier for people to find your palette.</p>
+            <p>For information if you don't see the column title, try moving the cursor out of the palette.</p>
+            <li>Set the creator</li>
+            <p>The name of the creator is also important, it makes it easier for people to find your palette.</p>
+            <li>Setup your post</li>
+            <p>In settings menu you can:</p>
+            <ul>
+                <li>Allow or disallow save button, this button is used by people to copy color code or save to PDF of your palette,</li>
+                <li>Allow or disallow quick save, quick save is the method people use to copy your Hex color code quickly,</li>
+                <li>And finally link or unlink your Instagram account, this will make the Instagram icon appear or disappear from your palette, this icon can be used by people to visit your Instagram.</li>
+            </ul>
+            <li>Make sure Instagram account</li>
+            <p>If you linked your Instagram, make sure you enter your Instagram account and click check if necessary to confirm your Instagram account.</p>
+            <p>At the end click post color palette, that's it now you are done creating and posting your palette.</p>
+        </ol>
+    <% } %>
+    <% if(blogSubject == "How to Gallery"){ %>
+        <h2>Searching palette</h2>
+        <ol>
+            <li>Go to <span><a href="/gallery" target="blank">Gallery</a></span></li>
+            <li>Open search options</li>
+            <p>Hover your cursor to the arrow located in left of page to open search options</p>
+            <li>Search in database</li>
+            <p>In the search section there are two options, the first is a search by the creator and the second is a search by title.</p>
+            <p>This section is used to search the color palette through the database and make sure that it doesn't show up that doesn't match.</p>
+            <li>Search out database</li>
+            <p>In the must section there are many options such as:</p>
+            <ul>
+                <li>Amount, set the amount to specify the number of colors.</li>
+                <li>Allow save, if checked this will only show the color palette that allows you to save the palette.</li>
+                <li>Allow quick save, if checked this will only show a color palette which allows you to quickly copy Hex color codes.</li>
+                <li>Auto generate, this option will hide all color palettes stored in the database and will display the color palettes generated automatically by Anraw.</li>
+                <li>From Anraw, this option will hide all color palettes created by others and will show color palettes created by Anraw.</li>
+                <li>Linked to Instagram, this option will only show the color palette that is linked to the creator's Instagram.</li>
+            </ul>
+            <p>And that's it, remember that the option doesn't search through the database. So make sure the color palette you want to search for is displayed based on the database selection.</p>
+        </ol>
+    <% } %>
+    <br>
+    <a href="javascript:history.back()" class="button button-ncta">Back</a>
+    <% if(blogSubject.includes("How to")){ %>
+        <a href="/pr" class="button  button-lcta">Home</a>
+        <% if(blogSubject != "How to Gallery"){ %>
+            <a href="/pr/tutorial/<%= blogSubject %>" class="button button-cta">Next Tutorial</a>
+        <% } %>
+    <% } %>
+</div>

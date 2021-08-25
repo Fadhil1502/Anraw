@@ -2,6 +2,11 @@ const express = require('express')
 const router = express.Router()
 const Generate = require('../models/generate')
 
+// Redirect
+router.get('/', (req, res) => {
+    res.redirect('/generate')
+})
+
 // Post Setup
 router.get('/:id', async (req, res) => {
     try{

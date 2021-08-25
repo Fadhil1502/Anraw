@@ -1,0 +1,104 @@
+<form method="POST" action="mailto:anrawofficial@gmail.com?subject=<%= formSubject %> From Website" enctype="text/plain" autocomplete="off">
+    <label for="Name">Your Name</label>
+    <br>
+    <input type="text" id="Name" name="Name" style="width: 50%; height: 50px;" value="Hi! my name " placeholder="Hi! my name ">
+    <br><br>
+    <% if(formSubject == "Review"){ %>
+        <p>Quality of Anraw</p>
+        <input type="radio" id="Vbad" name="Anraw Quality" value="Very Bad" required>
+        <label for="Vbad" title="Very Bad" class="star">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="25" fill="#0D0D0D"/>
+            </svg>                
+        </label>
+        <input type="radio" id="Bad" name="Anraw Quality" value="Bad" required>
+        <label for="Bad" title="Bad" class="star">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="25" fill="#0D0D0D"/>
+                <circle cx="25" cy="25.0001" r="6.57895" fill="#FF9500"/>
+            </svg>                
+        </label>
+        <input type="radio" id="Normal" name="Anraw Quality" value="Normal" required>
+        <label for="Normal" title="Normal" class="star">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="25" fill="#0D0D0D"/>
+                <circle cx="6.57895" cy="25.0001" r="6.57895" fill="#FF9500"/>
+                <circle cx="25" cy="6.57895" r="6.57895" fill="#FF9500"/>
+                <circle cx="25" cy="25.0001" r="6.57895" fill="#FF9500"/>
+                <circle cx="25" cy="43.421" r="6.57895" fill="white"/>
+                <circle cx="43.4211" cy="25.0001" r="6.57895" fill="#FF9500"/>
+            </svg>                
+        </label>
+        <input type="radio" id="Good" name="Anraw Quality" value="Good" required>
+        <label for="Good" title="Good" class="star">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="25" fill="#0D0D0D"/>
+                <circle cx="6.57895" cy="6.57895" r="6.57895" fill="white"/>
+                <circle cx="6.57895" cy="25.0001" r="6.57895" fill="#FF9500"/>
+                <circle cx="25" cy="6.57895" r="6.57895" fill="#FF9500"/>
+                <circle cx="25" cy="25.0001" r="6.57895" fill="#FF9500"/>
+                <circle cx="25" cy="43.421" r="6.57895" fill="white"/>
+                <circle cx="43.4211" cy="6.57895" r="6.57895" fill="white"/>
+                <circle cx="43.4211" cy="25.0001" r="6.57895" fill="#FF9500"/>
+            </svg>                
+        </label>
+        <input type="radio" id="Vgood" name="Anraw Quality" value="Very Good" required>
+        <label for="Vgood" title="Very Good" class="star">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="25" fill="#0D0D0D"/>
+                <circle cx="6.57895" cy="6.57895" r="6.57895" fill="white"/>
+                <circle cx="6.57895" cy="25.0001" r="6.57895" fill="#FF9500"/>
+                <circle cx="6.57895" cy="43.421" r="6.57895" fill="#FF9500"/>
+                <circle cx="25" cy="6.57895" r="6.57895" fill="#FF9500"/>
+                <circle cx="25" cy="25.0001" r="6.57895" fill="#FF9500"/>
+                <circle cx="25" cy="43.421" r="6.57895" fill="white"/>
+                <circle cx="43.4211" cy="6.57895" r="6.57895" fill="white"/>
+                <circle cx="43.4211" cy="25.0001" r="6.57895" fill="#FF9500"/>
+                <circle cx="43.4211" cy="43.421" r="6.57895" fill="#FF9500"/>
+            </svg>                
+        </label>
+        <br><br>
+    <% } %>
+    <% if(formSubject == "Suggestion" || formSubject == "Bug Report"){ %>
+        <p><%= formSubject %> in</p>
+        <input type="checkbox" id="Gallery" name="Category" value="Gallery">
+        <label for="Gallery" class="suggest">Gallery</label>
+        <input type="checkbox" id="Generate" name="Category" value="Generate">
+        <label for="Generate" class="suggest">Generate</label>
+        <input type="checkbox" id="Landing page" name="Category" value="Landing page">
+        <label for="Landing page" class="suggest">Landing page</label>
+        <input type="checkbox" id="Post" name="Category" value="Post">
+        <label for="Post" class="suggest">Post</label>
+        <input type="checkbox" id="Public relation" name="Category" value="Public relation">
+        <label for="Public relation" class="suggest">Public relation</label>
+        <input type="checkbox" id="Save" name="Category" value="Save">
+        <label for="Save" class="suggest">Save</label>
+        <br><br>
+    <% } %>
+    <% if(formSubject != "Disrespectful Language Report"){ %>
+        <label for="<%= formSubject %>">Your <%= formSubject %></label>
+        <br>
+        <textarea id="<%= formSubject %>" name="<%= formSubject %>" placeholder="<%= formContent %> " style="width: 100%; min-height: 150px; max-height: 100vh; resize: vertical;"><%= formContent %> </textarea>
+        <br><br>
+    <% } else { %>
+        <label for="ID">Color ID</label>
+        <br>
+        <input type="text" id="ID" name="Color ID" placeholder="ID, Title, Creator, or Instagram" style="width: 50%; height: 50px;" required>
+        <br><br>
+        <p>Step to find the ID</p>
+        <ol>
+            <li>Open <a href="/gallery" target="blank">Gallery</a></li>
+            <li>Find a color palette that has disrespectful language</li>
+            <li>Click save icon (If not shown, please enter another identity, such as the title, creator, or creator's Instagram account in "Color ID")</li>
+            <li>Look at the link</li>
+            <li>The ID is in the end of link (anraw.herokuapp.com/save/ID)</li>
+        </ol>
+        <br>
+    <% } %>
+    <label for="Instagram">Your Instagram</label>
+    <br>
+    <input type="text" id="Instagram" name="Instagram" value="@" placeholder="@" style="width: 50%; height: 50px;">
+    <br><br>
+    <a href="javascript:history.back()" class="button button-ncta">Back</a>
+    <button type="submit" class="button button-cta">Send</button>
+</form>
