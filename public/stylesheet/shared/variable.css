@@ -16,6 +16,7 @@
     --background-orange: hsl(var(--hue), 100%, 50%);
     --background-green: hsl(calc(var(--hue) + 120), 100%, 50%);
     --background-white: hsl(var(--hue), 100%, 100%);
-    --margin-super: 50px;
-    --margin-small: 25px;
+    --margin-mega: 50px;
+    --margin-super: 25px;
+    --margin-small: 12.5px;
 }

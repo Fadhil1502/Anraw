@@ -6,7 +6,7 @@
             <div id="colors"></div>
             <div id="settings">
                 <div style="cursor: default; height: 50px; overflow: hidden;">
-                    <input type="text" maxlength="30" name="title" value="<%= generate.title %>" placeholder="Title, ex: The color of..." required id="title">                
+                    <input type="text" maxlength="30" name="title" value="<%= generate.title %>" placeholder="Title, example: The color of..." required id="title">                
                     <br>
                     <input type="text" value="Created by <%= generate.creator %>" readonly id="Ccreator" style="cursor: default;">
                 </div>
@@ -47,10 +47,10 @@
             </div>
         </div>
         <br>
-        <button type="submit" class="button button-cta" style="width: 750px; height: 75px;">Post color palette</button>
+        <button type="submit" class="button button-cta">Post color palette</button>
     </form>
     <br>
     <form method="POST" action="/post/<%= generate.id %>?_method=DELETE">
-        <button type="submit" class="button button-lcta" onclick="sessionStorage.clear()" style="width: 750px; height: 75px;">Cancel & delete post</button>
+        <button type="submit" class="button button-lcta" onclick="sessionStorage.clear()">Cancel & delete post</button>
     </form>
 </div>

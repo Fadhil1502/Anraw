@@ -67,7 +67,8 @@
 }
 
 .public-relation form .suggest{
-    height: 50px;
+    height: fit-content;
+    margin: var(--margin-small);
     padding: 0px 25px;
     border-radius: 25px;
     background: var(--background);
@@ -142,4 +143,9 @@
     text-decoration: none;
     color: var(--highlight-font-color);
     cursor: pointer;
+}
+
+.public-relation form .suggestion{
+    display: flex;
+    flex-wrap: wrap;
 }

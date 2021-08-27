@@ -85,7 +85,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0px 25px
+    padding: 0px var(--margin-super);
 }
 
 .post #settings input{
@@ -96,11 +96,10 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: var(--font-size);
     cursor: text;
-    margin-left: 25px;
 }
 
 .post #settings div{
-    margin-right: 25px;
+    margin-right: var(--margin-super);
     cursor: pointer;
 }
 
@@ -146,4 +145,9 @@
 
 .post .candidate-setup input[type = checkbox]:checked + label .setup{
     background: var(--background-orange);
+}
+
+.post form button{
+    width: 750px;
+    height: 75px;
 }

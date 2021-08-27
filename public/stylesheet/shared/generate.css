@@ -81,7 +81,7 @@
 
 .generate .basic-input{
     height: 25px;
-    margin: calc(var(--margin-small) / 2);
+    margin: var(--margin-small);
     border-radius: 25px;
     border: none;
     padding: 0px 6.25px;
@@ -116,6 +116,7 @@
     display: flex;
     justify-content: center;
     margin-top: var(--margin-super);
+    flex-wrap: wrap;
 }
 
 .generate .section input[type = radio]{
@@ -129,7 +130,7 @@
     background: var(--background-white);
     margin: var(--margin-small);
     font-size: 96px;
-    color: var(--background-orange);
+    color: var(--highlight-font-color);
     text-align: center;
     font-weight: bold;
     cursor: pointer;
@@ -159,7 +160,7 @@
     width: 50px;
     height: 50px;
     border-radius: 25px;
-    margin: calc(var(--margin-small) / 2);
+    margin: var(--margin-small)
 }
 
 .generate #finishInput{
@@ -180,7 +181,7 @@
 }
 
 .generate #allColor div{
-    margin: calc(var(--margin-small) / 2);
+    margin: var(--margin-small)
 }
 
 .generate #allColor div div div{

@@ -4,7 +4,7 @@ footer{
     align-items: flex-end;
     flex-direction: column;
     background: var(--background);
-    margin: var(--margin-small) 0 -50px -50px;
+    margin: var(--margin-super) 0 -50px -50px;
     font-size: var(--lessreadble-font-size);
     border-top: 1px solid var(--background-orange);
     padding: 25px 12.5px;

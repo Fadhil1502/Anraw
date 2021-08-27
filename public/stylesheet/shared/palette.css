@@ -68,7 +68,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 25px
+    padding: 0px var(--margin-super);
 }
 
 .settings input{
@@ -77,10 +77,9 @@
     color: var(--background);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: var(--font-size);
-    margin-left: 25px;
 }
 
-.settings div{
-    margin-right: 25px;
+.settings div div{
+    margin-right: var(--margin-super);
     cursor: pointer;
 }

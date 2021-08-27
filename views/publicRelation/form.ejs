@@ -61,18 +61,20 @@
     <% } %>
     <% if(formSubject == "Suggestion" || formSubject == "Bug Report"){ %>
         <p><%= formSubject %> in</p>
-        <input type="checkbox" id="Gallery" name="Category" value="Gallery">
-        <label for="Gallery" class="suggest">Gallery</label>
-        <input type="checkbox" id="Generate" name="Category" value="Generate">
-        <label for="Generate" class="suggest">Generate</label>
-        <input type="checkbox" id="Landing page" name="Category" value="Landing page">
-        <label for="Landing page" class="suggest">Landing page</label>
-        <input type="checkbox" id="Post" name="Category" value="Post">
-        <label for="Post" class="suggest">Post</label>
-        <input type="checkbox" id="Public relation" name="Category" value="Public relation">
-        <label for="Public relation" class="suggest">Public relation</label>
-        <input type="checkbox" id="Save" name="Category" value="Save">
-        <label for="Save" class="suggest">Save</label>
+        <div class="suggestion">
+            <input type="checkbox" id="Gallery" name="Category" value="Gallery">
+            <label for="Gallery" class="suggest">Gallery</label>
+            <input type="checkbox" id="Generate" name="Category" value="Generate">
+            <label for="Generate" class="suggest">Generate</label>
+            <input type="checkbox" id="Landing page" name="Category" value="Landing page">
+            <label for="Landing page" class="suggest">Landing page</label>
+            <input type="checkbox" id="Post" name="Category" value="Post">
+            <label for="Post" class="suggest">Post</label>
+            <input type="checkbox" id="Public relation" name="Category" value="Public relation">
+            <label for="Public relation" class="suggest">Public relation</label>
+            <input type="checkbox" id="Save" name="Category" value="Save">
+            <label for="Save" class="suggest">Save</label>
+        </div>
         <br><br>
     <% } %>
     <% if(formSubject != "Disrespectful Language Report"){ %>
