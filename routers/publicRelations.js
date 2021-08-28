@@ -31,6 +31,11 @@ router.get('/contact', (req, res) => {
     res.render('publicRelation/index', { page: 'Public Relation | Contact - ', PRContent: 'blog', blogSubject: 'Contact' })
 })
 
+// Donation Info
+router.get('/donation', (req, res) => {
+    res.render('publicRelation/index', { page: 'Public Relation | Donation - ', PRContent: 'blog', blogSubject: 'Donation' })
+})
+
 // Version Info
 router.get('/version', (req, res) => {
     res.render('publicRelation/index', { page: 'Public Relation | Version - ', PRContent: 'blog', blogSubject: 'Version' })
