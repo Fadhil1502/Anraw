@@ -1,4 +1,6 @@
-<form method="POST" action="mailto:anrawofficial@gmail.com?subject=<%= formSubject %> From Website" enctype="text/plain" autocomplete="off" target="blank">
+<form method="POST" enctype="text/plain" autocomplete="off" id="mail">
+    <h1><%= formSubject %></h1>
+    <br>
     <label for="Name">Your Name</label>
     <br>
     <input type="text" id="Name" name="Name" style="width: 50%; height: 50px;" value="Hi! my name " placeholder="Hi! my name ">
@@ -42,7 +44,7 @@
                 <circle cx="43.4211" cy="25.0001" r="6.57895" fill="#FF9500"/>
             </svg>                
         </label>
-        <input type="radio" id="Vgood" name="Anraw Quality" value="Very Good" required>
+        <input type="radio" id="Vgood" name="Anraw Quality" value="Very Good" required checked>
         <label for="Vgood" title="Very Good" class="star">
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="25" cy="25" r="25" fill="#0D0D0D"/>
@@ -85,7 +87,7 @@
     <% } else { %>
         <label for="ID">Color ID</label>
         <br>
-        <input type="text" id="ID" name="Color ID" placeholder="ID, Title, Creator, or Instagram" style="width: 50%; height: 50px;" required>
+        <input type="text" id="ID" name="Color ID" placeholder="ID, Title, Creator, or Instagram" style="width: 50%; height: 50px;" required value="~id~">
         <br><br>
         <p>Step to find the ID</p>
         <ol>
@@ -102,5 +104,5 @@
     <input type="text" id="Instagram" name="Instagram" value="@" placeholder="@" style="width: 50%; height: 50px;">
     <br><br>
     <a href="javascript:history.back()" class="button button-ncta">Back</a>
-    <button type="submit" class="button button-cta">Send</button>
+    <a class="button button-cta" onclick="sendMail()">Send</a>
 </form>
