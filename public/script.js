@@ -3042,6 +3042,7 @@ function sendMail(){
     document.body.appendChild(a);
 
     a.href = "mailto:anrawofficial@gmail.com?subject=" + document.getElementsByTagName("h1")[0].innerText + " From Website&body=" + mailBody;
+    a.target = "top";
     a.click();
 
     document.body.removeChild(a);
