@@ -3020,31 +3020,4 @@ function setAnrawTime(){
     document.getElementById("anrawTime").innerText = anrawTime + " " + APM;
 }
 
-function sendMail(){
-    var a = document.createElement("a");
-    var inputs = document.getElementsByTagName("input").length;
-    var mailBody = "";
-
-    for(var x = 0; x < inputs; x++){
-        if(document.getElementsByTagName("input")[x].type == "radio" || document.getElementsByTagName("input")[x].type == "checkbox"){
-            if(document.getElementsByTagName("input")[x].checked){
-                mailBody += document.getElementsByTagName("h1")[0].innerText + " : " + document.getElementsByTagName("input")[x].value + "%0D%0A%0D%0A";
-            }
-        }
-        else if(x == (inputs - 1) && document.getElementsByTagName("h1")[0].innerText != "Disrespectful Language Report"){
-            mailBody += document.getElementsByTagName("textarea")[0].value + "%0D%0A%0D%0A";
-        }
-        if(document.getElementsByTagName("input")[x].type != "radio" && document.getElementsByTagName("input")[x].type != "checkbox"){
-            mailBody += document.getElementsByTagName("input")[x].value + "%0D%0A%0D%0A";
-        }
-    }
-
-    document.body.appendChild(a);
-
-    a.href = "mailto:anrawofficial@gmail.com?subject=" + document.getElementsByTagName("h1")[0].innerText + " From Website&body=" + mailBody;
-    a.target = "top";
-    a.click();
-
-    document.body.removeChild(a);
-}
 // Public Relation Script
