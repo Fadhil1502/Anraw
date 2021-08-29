@@ -1,5 +1,5 @@
 if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("sw.js")
+    navigator.serviceWorker.register("/sw.js")
 }
 
 window.addEventListener("load", function(){
@@ -3018,5 +3018,9 @@ function setAnrawTime(){
     }
 
     document.getElementById("anrawTime").innerText = anrawTime + " " + APM;
+}
+
+function sendMail(){
+    alert("Test")
 }
 // Public Relation Script

@@ -547,4 +547,16 @@ section:nth-child(odd){
     #saveN .form input{
         width: 250px;
     }
+
+    .post .candidate-post{
+        width: 100%;
+    }
+
+    .post .candidate-setup{
+        width: 100%;
+    }
+
+    .post form button{
+        width: 250px;
+    }
 }
