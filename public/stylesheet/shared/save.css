@@ -181,6 +181,11 @@
     height: calc(100vh / 2);
 }
 
+.save .preview div canvas{
+    width: 250px;
+    height: 250px;
+}
+
 .save .CCC{
     display: flex;
     flex-direction: column;
