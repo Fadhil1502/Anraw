@@ -173,6 +173,12 @@
     flex-wrap: wrap;
     color: var(--background);
     padding-top: var(--margin-mega);
+    overflow: hidden;
+}
+
+.save .preview canvas{
+    width: calc(100vh / 2);
+    height: calc(100vh / 2);
 }
 
 .save .CCC{

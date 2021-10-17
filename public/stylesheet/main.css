@@ -309,6 +309,7 @@ section:nth-child(odd){
     .save .preview{
         width: 100vw;
         height: auto;
+        margin: var(--margin-small) auto;
     }
 }
 

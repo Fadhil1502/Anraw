@@ -125,5 +125,6 @@
     z-index: 75;
     opacity: 0;
     cursor: pointer;
+    font-size: 24px;
     transition: 0.5s;
 }

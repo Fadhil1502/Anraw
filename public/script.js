@@ -301,13 +301,9 @@ function Reset(){
             document.getElementById("allColor").removeChild(document.getElementById("color" + z));
         }
     }
-
-    document.getElementById("svgN1").setAttribute("onclick", "move(-1)");
-    document.getElementById("svgP1").setAttribute("onclick", "move(1)");
-
-    for(var x = 1; x < 8; x++){
-        document.getElementById("generate").removeChild(document.getElementById("ball" + x));
-    }
+    // for(var x = 1; x < 8; x++){
+    //     document.getElementById("generate").removeChild(document.getElementById("ball" + x));
+    // }
 
     background();
 }
@@ -452,13 +448,11 @@ function colorCode(code){
             document.getElementById("allColor").removeChild(document.getElementById("color" + z));
         }
     }
-
-    document.getElementById("svgN1").setAttribute("onclick", "move(-1)");
-    document.getElementById("svgP1").setAttribute("onclick", "move(1)");
-
     for(var x = 1; x < 8; x++){
         document.getElementById("ball" + x).style.background = document.getElementById("input1").value;
     }
+
+    document.getElementById("one").checked = true;
 }
 
 function random(things){
@@ -1325,7 +1319,7 @@ function IP(){
 
     var allSaveColor = [];
     var allCanvasCode = ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A"];
-    var canvasSquare = window.screen.height / 2;
+    var canvasSquare = 540;
     var ctdx = [0];
 
     for(var x = 0; x < 8; x++){
@@ -1445,7 +1439,7 @@ function reloadSlide(slide){
 
     var allSaveColor = [];
     var allCanvasCode = JSON.parse(sessionStorage.getItem("temporaryCode"));
-    var canvasSquare = window.screen.height / 2;
+    var canvasSquare = 540;
     var ctdx = [0];
 
     for(var x = 0; x < 8; x++){
@@ -1615,14 +1609,7 @@ function reloadSlide(slide){
             }
 
             ctd.fillStyle = "#ffffff";
-
-            if(window.screen.width <= 1024){
-                ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-            }
-            else{
-                ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-            }
-
+            ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
             ctd.textAlign = "center";
             ctd.textBaseline = 'middle';
 
@@ -1686,14 +1673,7 @@ function reloadSlide(slide){
                     }
 
                     ctd.fillStyle = "#ffffff";
-
-                    if(window.screen.width <= 1024){
-                        ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-                    }
-                    else{
-                        ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-                    }
-
+                    ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
                     ctd.textAlign = "center";
                     ctd.textBaseline = 'middle';
 
@@ -1754,132 +1734,39 @@ function reloadSlide(slide){
             }
 
             ctd.fillStyle = "#ffffff";
-
-            if(window.screen.width <= 1024){
-                ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-            }
-            else{
-                ctd.font = "36px Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
-            }
-
+            ctd.font = "36px Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
             ctd.textAlign = "center";
-
-            if(window.screen.width <= 1024){
-                ctd.fillText("This color palette", canvasSquare / 2, 34, canvasSquare);
-            }
-            else{
-                ctd.fillText("This color palette", canvasSquare / 2, 46, canvasSquare);
-            }
+            ctd.fillText("This color palette", canvasSquare / 2, 46, canvasSquare);
             
+            ctd.fillStyle = "#ffffff";
+            ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
+            ctd.textAlign = "center";
+            ctd.fillText("Created by", canvasSquare / 2, (canvasSquare / 2 ) - 52, canvasSquare);
 
             ctd.fillStyle = "#ffffff";
-
-            if(window.screen.width <= 1024){
-                ctd.font = "14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-            }
-            else{
-                ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-            }
-
+            ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
             ctd.textAlign = "center";
-
-            if(window.screen.width <= 1024){
-                ctd.fillText("Created by", canvasSquare / 2, 98, canvasSquare);
-            }
-            else{
-                ctd.fillText("Created by", canvasSquare / 2, 139, canvasSquare);
-            }
-            
+            ctd.fillText("@" + document.getElementById("CIPC").value, canvasSquare / 2, (canvasSquare / 2 ) - 24, canvasSquare);
 
             ctd.fillStyle = "#ffffff";
-
-            if(window.screen.width <= 1024){
-                ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-            }
-            else{
-                ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-            }
-
+            ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
             ctd.textAlign = "center";
-
-            if(window.screen.width <= 1024){
-                ctd.fillText("@" + document.getElementById("CIPC").value, canvasSquare / 2, 116, canvasSquare);
-            }
-            else{
-                ctd.fillText("@" + document.getElementById("CIPC").value, canvasSquare / 2, 163, canvasSquare);
-            }
+            ctd.fillText("Powered by", canvasSquare / 2, (canvasSquare / 2) + 18, canvasSquare);
 
             ctd.fillStyle = "#ffffff";
-
-            if(window.screen.width <= 1024){
-                ctd.font = "14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-            }
-            else{
-                ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-            }
-
+            ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
             ctd.textAlign = "center";
-
-            if(window.screen.width <= 1024){
-                ctd.fillText("Powered by", canvasSquare / 2, 155, canvasSquare);
-            }
-            else{
-                ctd.fillText("Powered by", canvasSquare / 2, 206, canvasSquare);
-            }
+            ctd.fillText("Anraw", canvasSquare / 2, (canvasSquare / 2 ) + 42, canvasSquare);
 
             ctd.fillStyle = "#ffffff";
-
-            if(window.screen.width <= 1024){
-                ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-            }
-            else{
-                ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-            }
-
+            ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
             ctd.textAlign = "center";
-
-            if(window.screen.width <= 1024){
-                ctd.fillText("Anraw", canvasSquare / 2, 173, canvasSquare);
-            }
-            else{
-                ctd.fillText("Anraw", canvasSquare / 2, 230, canvasSquare);
-            }
+            ctd.fillText("Use code: " + code, canvasSquare / 2, canvasSquare - 42, canvasSquare - 20);
 
             ctd.fillStyle = "#ffffff";
-
-            if(window.screen.width <= 1024){
-                ctd.font = "14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-            }
-            else{
-                ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-            }
-
+            ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
             ctd.textAlign = "center";
-
-            if(window.screen.width <= 1024){
-                ctd.fillText("Use code: " + code, canvasSquare / 2, 227, canvasSquare - 20);
-            }
-            else{
-                ctd.fillText("Use code: " + code, canvasSquare / 2, 298, canvasSquare - 20);
-            }
-
-            ctd.fillStyle = "#ffffff";
-
-            if(window.screen.width <= 1024){
-                ctd.font = "14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-            }
-            else{
-                ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-            }
-
-            ctd.textAlign = "center";
-
-            if(window.screen.width <= 1024){
-                ctd.fillText("Visit: anraw.herokuapp.com", canvasSquare / 2, 270, canvasSquare);
-            }
-            else{
-                ctd.fillText("Visit: anraw.herokuapp.com", canvasSquare / 2, 341, canvasSquare);
-            }
+            ctd.fillText("Visit: anraw.herokuapp.com", canvasSquare / 2, canvasSquare - 18, canvasSquare);
 
             allCanvasCode[(slide.id.split("S")[1].split("I")[0] - 1)] = "C";
         }
@@ -1911,130 +1798,39 @@ function reloadSlide(slide){
                     }
 
                     ctd.fillStyle = "#ffffff";
-
-                    if(window.screen.width <= 1024){
-                        ctd.font = "24px Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
-                    }
-                    else{
-                        ctd.font = "36px Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
-                    }
-                    
+                    ctd.font = "36px Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
                     ctd.textAlign = "center";
-                    
-                    if(window.screen.width <= 1024){
-                        ctd.fillText("This color palette", canvasSquare / 2, 34, canvasSquare);
-                    }
-                    else{
-                        ctd.fillText("This color palette", canvasSquare / 2, 46, canvasSquare);
-                    }
+                    ctd.fillText("This color palette", canvasSquare / 2, 46, canvasSquare);
 
                     ctd.fillStyle = "#ffffff";
-
-                    if(window.screen.width <= 1024){
-                        ctd.font = "14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-                    }
-                    else{
-                        ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-                    }
-
+                    ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
                     ctd.textAlign = "center";
-                    
-                    if(window.screen.width <= 1024){
-                        ctd.fillText("Created by", canvasSquare / 2, 98, canvasSquare);
-                    }
-                    else{
-                        ctd.fillText("Created by", canvasSquare / 2, 139, canvasSquare);
-                    }
+                    ctd.fillText("Created by", canvasSquare / 2, (canvasSquare / 2 ) - 57, canvasSquare);
 
                     ctd.fillStyle = "#ffffff";
-
-                    if(window.screen.width <= 1024){
-                        ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-                    }
-                    else{
-                        ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-                    }
-
+                    ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
                     ctd.textAlign = "center";
-                    
-                    if(window.screen.width <= 1024){
-                        ctd.fillText("@" + document.getElementById("CIPC").value, canvasSquare / 2, 116, canvasSquare);
-                    }
-                    else{
-                        ctd.fillText("@" + document.getElementById("CIPC").value, canvasSquare / 2, 163, canvasSquare);
-                    }
+                    ctd.fillText("@" + document.getElementById("CIPC").value, canvasSquare / 2, (canvasSquare / 2 ) - 24, canvasSquare);
 
                     ctd.fillStyle = "#ffffff";
-
-                    if(window.screen.width <= 1024){
-                        ctd.font = "14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-                    }
-                    else{
-                        ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-                    }
-
+                    ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
                     ctd.textAlign = "center";
-                    
-                    if(window.screen.width <= 1024){
-                        ctd.fillText("Powered by", canvasSquare / 2, 155, canvasSquare);
-                    }
-                    else{
-                        ctd.fillText("Powered by", canvasSquare / 2, 206, canvasSquare);
-                    }
+                    ctd.fillText("Powered by", canvasSquare / 2, (canvasSquare / 2) + 18, canvasSquare);
 
                     ctd.fillStyle = "#ffffff";
-
-                    if(window.screen.width <= 1024){
-                        ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-                    }
-                    else{
-                        ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-                    }
-
+                    ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
                     ctd.textAlign = "center";
-                   
-                    if(window.screen.width <= 1024){
-                        ctd.fillText("Anraw", canvasSquare / 2, 173, canvasSquare);
-                    }
-                    else{
-                        ctd.fillText("Anraw", canvasSquare / 2, 230, canvasSquare);
-                    }
+                    ctd.fillText("Anraw", canvasSquare / 2, (canvasSquare / 2 ) + 42, canvasSquare);
 
                     ctd.fillStyle = "#ffffff";
-
-                    if(window.screen.width <= 1024){
-                        ctd.font = "14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-                    }
-                    else{
-                        ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-                    }
-
+                    ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
                     ctd.textAlign = "center";
-                    
-                    if(window.screen.width <= 1024){
-                        ctd.fillText("Use code: " + code, canvasSquare / 2, 227, canvasSquare - 20);
-                    }
-                    else{
-                        ctd.fillText("Use code: " + code, canvasSquare / 2, 298, canvasSquare - 20);
-                    }
+                    ctd.fillText("Use code: " + code, canvasSquare / 2, canvasSquare - 62, canvasSquare - 20);
 
                     ctd.fillStyle = "#ffffff";
-
-                    if(window.screen.width <= 1024){
-                        ctd.font = "14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-                    }
-                    else{
-                        ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-                    }
-
+                    ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
                     ctd.textAlign = "center";
-
-                    if(window.screen.width <= 1024){
-                        ctd.fillText("Visit: anraw.herokuapp.com", canvasSquare / 2, 270, canvasSquare);
-                    }
-                    else{
-                        ctd.fillText("Visit: anraw.herokuapp.com", canvasSquare / 2, 341, canvasSquare);
-                    }
+                    ctd.fillText("Visit: anraw.herokuapp.com", canvasSquare / 2, canvasSquare - 18, canvasSquare);
                 }
             }
         }
@@ -2052,14 +1848,7 @@ function reloadSlide(slide){
             ctd.fillRect(10, 10, canvasSquare - 20, canvasSquare - 100);
 
             ctd.fillStyle = "#ffffff";
-
-            if(window.screen.width <= 1024){
-                ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-            }
-            else{
-                ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-            }
-
+            ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
             ctd.textAlign = "center";
             ctd.textBaseline = 'middle';
 
@@ -2134,14 +1923,7 @@ function reloadSlide(slide){
                     ctd.fillRect(10, 10, canvasSquare - 20, canvasSquare - 100);
 
                     ctd.fillStyle = "#ffffff";
-                    
-                    if(window.screen.width <= 1024){
-                        ctd.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";    
-                    }
-                    else{
-                        ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-                    }
-            
+                    ctd.font = "24px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
                     ctd.textAlign = "center";
                     ctd.textBaseline = 'middle';
 
