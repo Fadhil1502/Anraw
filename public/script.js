@@ -67,6 +67,29 @@ window.addEventListener("load", function(){
     }, 1000)
 })
 
+function outro(){
+    var div = document.createElement("div");
+    var h1 = document.createElement("h1");
+    var load = document.createTextNode("Please wait");
+
+    div.setAttribute("id", "outro");
+    h1.setAttribute("style", "color: var(--font-color); opacity: 0%; transition: 0.5s");
+
+    h1.appendChild(load);
+    div.appendChild(h1);
+
+    document.getElementsByTagName("body")[0].appendChild(div);
+    document.getElementsByTagName("body")[0].style.overflow = "hidden";
+
+    setTimeout(function(){
+        document.getElementById("outro").style.opacity = "100%";
+
+        setTimeout(function(){
+            document.getElementById("outro").getElementsByTagName("h1")[0].style.opacity = "100%";
+        }, 7000)
+    }, 1);
+}
+
 // Landing Page Script
 function generateExample(){
     document.getElementById("exampleColors").innerHTML = "";

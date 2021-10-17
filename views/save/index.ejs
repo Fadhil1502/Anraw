@@ -4,7 +4,7 @@
         <% if(generate != null && generate.posted == false){ %>
             <p class="button button-cta" onclick="doneSave('open')">Done</p>
         <% } else { %>
-            <p><a class="button button-cta" onclick="doneSave()" href="/gallery">Done</a></p>
+            <p><a class="button button-cta" onclick="doneSave()" href="/gallery" onclick="outro()">Done</a></p>
         <% } %> 
     </div>
     <div class="body">
@@ -142,10 +142,10 @@
         <p>Hey there! Do you want to share your color palette on the Gallery?</p>
         <p>It would be great if other people saw your amazing palette</p>
         <br>
-        <a href="../post/<%= generate.id %>" class="button button-cta" onclick="sessionStorage.removeItem('temporaryCode')">Sure</a>
+        <a href="../post/<%= generate.id %>" class="button button-cta" onclick="sessionStorage.removeItem('temporaryCode'); outro()">Sure</a>
         <br>
         <form method="POST" action="/save/<%= generate.id %>?_method=DELETE">
-            <button type="submit" class="button button-lcta" onclick="sessionStorage.clear()">Maybe later</button>
+            <button type="submit" class="button button-lcta" onclick="sessionStorage.clear(); outro()">Maybe later</button>
         </form>
     </div>
 <% } %> 

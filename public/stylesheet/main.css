@@ -136,6 +136,21 @@ input:focus, select, textarea{
     animation: loadingT 5s ease-in-out infinite 1s;
 }
 
+#outro{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom right, var(--background-orange), var(--background));;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    opacity: 0%;
+    transition: 1s;
+}
+
 .container{
     margin: var(--margin-mega);
 }
