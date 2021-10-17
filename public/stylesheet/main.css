@@ -136,7 +136,7 @@ input:focus, select, textarea{
     animation: loadingT 5s ease-in-out infinite 1s;
 }
 
-#outros{
+#outro{
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to bottom right, var(--background-orange), var(--background));;
