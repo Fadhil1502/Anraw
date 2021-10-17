@@ -4,7 +4,7 @@
         <% if(generate != null && generate.posted == false){ %>
             <p class="button button-cta" onclick="doneSave('open')">Done</p>
         <% } else { %>
-            <p><a class="button button-cta" onclick="doneSave()" href="/gallery" onclick="outro()">Done</a></p>
+            <p><a class="button button-cta" onclick="doneSave(); outro()" href="/gallery">Done</a></p>
         <% } %> 
     </div>
     <div class="body">
