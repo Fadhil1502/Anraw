@@ -67,12 +67,12 @@ window.addEventListener("load", function(){
     }, 1000)
 })
 
-function outro(){
+function outros(){
     var div = document.createElement("div");
     var h1 = document.createElement("h1");
     var load = document.createTextNode("Please wait");
 
-    div.setAttribute("id", "outro");
+    div.setAttribute("id", "outros");
     h1.setAttribute("style", "color: var(--font-color); opacity: 0%; transition: 0.5s");
 
     h1.appendChild(load);
@@ -82,10 +82,10 @@ function outro(){
     document.getElementsByTagName("body")[0].style.overflow = "hidden";
 
     setTimeout(function(){
-        document.getElementById("outro").style.opacity = "100%";
+        document.getElementById("outros").style.opacity = "100%";
 
         setTimeout(function(){
-            document.getElementById("outro").getElementsByTagName("h1")[0].style.opacity = "100%";
+            document.getElementById("outros").getElementsByTagName("h1")[0].style.opacity = "100%";
         }, 7000)
     }, 1);
 }
