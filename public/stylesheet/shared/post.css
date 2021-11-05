@@ -147,7 +147,7 @@
     background: var(--background-orange);
 }
 
-.post form button{
+.post button{
     width: 750px;
     height: 75px;
 }

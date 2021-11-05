@@ -13,17 +13,17 @@ router.get('/give', (req, res) => {
 
 // Email Message
 router.get('/give/message', (req, res) => {
-    res.render('publicRelation/index', { page: 'Public Relation | Give Message - ', PRContent: 'form', formSubject: 'Message', formContent: 'Dear Anraw,' })
+    res.render('publicRelation/index', { page: 'Public Relation | Give Message - ', PRContent: 'form', formSubject: 'Message' })
 })
 
 // Email Review
 router.get('/give/review', (req, res) => {
-    res.render('publicRelation/index', { page: 'Public Relation | Give Review - ', PRContent: 'form', formSubject: 'Review', formContent: 'My experience using Anraw,' })
+    res.render('publicRelation/index', { page: 'Public Relation | Give Review - ', PRContent: 'form', formSubject: 'Review' })
 })
 
 // Email Suggestion
 router.get('/give/suggestion', (req, res) => {
-    res.render('publicRelation/index', { page: 'Public Relation | Give Suggestion - ', PRContent: 'form', formSubject: 'Suggestion', formContent: 'My suggestion for Anraw,' })
+    res.render('publicRelation/index', { page: 'Public Relation | Give Suggestion - ', PRContent: 'form', formSubject: 'Suggestion' })
 })
 
 // Contact Info
@@ -53,12 +53,12 @@ router.get('/report', (req, res) => {
 
 // Report Bug
 router.get('/report/bug', (req, res) => {
-    res.render('publicRelation/index', { page: 'Public Relation | Report Bug - ', PRContent: 'form', formSubject: 'Bug Report', formContent: 'I found bug,' })
+    res.render('publicRelation/index', { page: 'Public Relation | Report Bug - ', PRContent: 'form', formSubject: 'Bug Report' })
 })
 
 // Report Disrespectful Language
 router.get('/report/dl', (req, res) => {
-    res.render('publicRelation/index', { page: 'Public Relation | Report Disrespectful Language - ', PRContent: 'form', formSubject: 'Disrespectful Language Report', formContent: 'Someone ,' })
+    res.render('publicRelation/index', { page: 'Public Relation | Report Disrespectful Language - ', PRContent: 'form', formSubject: 'Disrespectful Language Report' })
 })
 
 // Tutorial Home

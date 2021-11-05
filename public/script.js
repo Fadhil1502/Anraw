@@ -295,7 +295,7 @@ function setAnrawCode(){
 }
 // Landing Page Script
 
-// Generator Script
+// Generate Script
 function background(){
     for(var x = 1; x < 8; x++){
         var wnh = Math.floor(Math.random() * 375);
@@ -304,7 +304,7 @@ function background(){
         var div = document.createElement("div");
 
         div.setAttribute("class", "background-ball");
-        div.setAttribute("style", "width: " + wnh + "px; height: " + wnh + "px; background: #ff9500; top: " + Math.floor(Math.random() * vh) + "px; left: " + Math.floor(Math.random() * vw) + "px;");
+        div.setAttribute("style", "width: " + wnh + "px; height: " + wnh + "px; background: var(--background-orange); top: " + Math.floor(Math.random() * vh) + "px; left: " + Math.floor(Math.random() * vw) + "px;");
         div.setAttribute("id", "ball" + x);
 
         document.getElementById("generate").appendChild(div);
@@ -318,17 +318,17 @@ function Reset(){
         document.getElementsByName("amount")[y].value = (y + 1);
     }
 
-    document.getElementById("colorAmount").innerHTML = "<div class='color' style='background: #ff9500;'></div>";
-    document.getElementById("finishInput").style.background = "#ff9500";
+    document.getElementById("colorAmount").innerHTML = "<div class='color' style='background: var(--background-orange);'></div>";
+    document.getElementById("finishInput").style.background = "var(--background-orange)";
 
     for(var z = 2; z < 9; z++){
         if(document.getElementById("color" + z) != null){
             document.getElementById("allColor").removeChild(document.getElementById("color" + z));
         }
     }
-    // for(var x = 1; x < 8; x++){
-    //     document.getElementById("generate").removeChild(document.getElementById("ball" + x));
-    // }
+    for(var x = 1; x < 8; x++){
+        document.getElementById("generate").removeChild(document.getElementById("ball" + x));
+    }
 
     background();
 }
@@ -656,7 +656,7 @@ function random(things){
     }
 }
 
-function addColor(amount){
+function addColor(amount, udeg){
     for(var y = 0; y < 4; y++){
         document.getElementsByName("amount")[y].value = (y + 1);
     }
@@ -710,15 +710,34 @@ function addColor(amount){
         document.getElementById("two").checked = true;
     }
     else if(amount == 3){
-        var deg = Math.floor(Math.random() * 181);
+        if(udeg == "Y"){
+            var deg = parseInt(document.getElementById("DR3").value);
+
+            while(deg >180){
+                deg-=180;
+            }
+        }
+        else{
+            var deg = Math.floor(Math.random() * 181);
+        }
+        
         var add = deg;
         var subtract = deg;
 
         document.getElementById("three").checked = true;
+        document.getElementById("DR3").value = deg;
     }
     else if(amount == 4){
-        var deg = Math.floor(Math.random() * 91);
+        if(udeg == "Y"){
+            var deg = parseInt(document.getElementById("DR4").value);
 
+            while(deg >90){
+                deg-=90;
+            }
+        }
+        else{
+            var deg = Math.floor(Math.random() * 91);
+        }
         if(deg % 2 == 0){
             var add = deg;
             var subtract = deg + 90;
@@ -729,6 +748,7 @@ function addColor(amount){
         }
 
         document.getElementById("four").checked = true;
+        document.getElementById("DR4").value = deg;
     }
     
     var addColor = baseHue + add;
@@ -1105,7 +1125,7 @@ function removeFinish(colorId){
         }
     }
 }
-// Generator Script
+// Generate Script
 
 // Save Script
 function switchSetting(option){
@@ -1437,10 +1457,12 @@ function IP(){
         }
     }
     
+    document.getElementById("ACIP").value = allSaveColor.slice(-1);
     document.getElementById("HIP").value = "@anraw_palette #anraw ";
 
     for(var c = 0; c < allSaveColor.slice(-1)[0]; c++){
         document.getElementById("HIP").value += allSaveColor[c] + " ";
+        document.getElementById("ACIP").value += allSaveColor[c];
     }
 
     document.getElementById("HIP").value += "#becreative #colorspalette";
@@ -2310,12 +2332,12 @@ function examplePDF(){
     if(document.getElementById("OEPDFF4").checked){
         var canvas = document.createElement("canvas");
         var ctd = canvas.getContext("2d");
-        var start = 0;
+        var start = -90*(Math.PI/180);
 
         canvas.width = 250;
         canvas.height = 250;
 
-        canvas.setAttribute("style", "margin: var(--margin-small); transform: rotate(-90deg);");
+        canvas.setAttribute("style", "margin: var(--margin-small);");
 
         for(var x = 0; x < data[7]; x++){
             if(Math.floor(Math.random() * 2)){
@@ -2329,7 +2351,7 @@ function examplePDF(){
             ctd.moveTo(125, 125);
 
             if((x + 1) == data[7]){
-                ctd.arc(125, 125, 125, start, 2 * Math.PI);
+                ctd.arc(125, 125, 125, start, -90*(Math.PI/180));
             }
             else{
                 ctd.arc(125, 125, 125, start, randomEnd);
@@ -2815,43 +2837,18 @@ function setAnrawTime(){
     let APM
     var anrawTime = new Date().getUTCHours() + 7;
 
-    if(anrawTime > 12){
-        anrawTime -= 12;
-        APM = "PM";
-    }
-    if(anrawTime == 0){
-        anrawTime = 12;
-        APM = "AM"
+    if(anrawTime < 6 || anrawTime > 18){
+        if(anrawTime >= 12){
+            anrawTime -= 12;
+            APM = "PM";
+    
+            if(anrawTime >= 12){
+                anrawTime -= 12;
+                APM = "AM";
+            }
+        }
     }
 
     document.getElementById("anrawTime").innerText = anrawTime + " " + APM;
-}
-
-function sendMail(){
-    var a = document.createElement("a");
-    var inputs = document.getElementsByTagName("input").length;
-    var mailBody = "";
-
-    for(var x = 0; x < inputs; x++){
-        if(document.getElementsByTagName("input")[x].type == "radio" || document.getElementsByTagName("input")[x].type == "checkbox"){
-            if(document.getElementsByTagName("input")[x].checked){
-                mailBody += document.getElementsByTagName("h1")[0].innerText + " : " + document.getElementsByTagName("input")[x].value + "%0D%0A%0D%0A";
-            }
-        }
-        else if(x == (inputs - 1) && document.getElementsByTagName("h1")[0].innerText != "Disrespectful Language Report"){
-            mailBody += document.getElementsByTagName("textarea")[0].value + "%0D%0A%0D%0A";
-        }
-        if(document.getElementsByTagName("input")[x].type != "radio" && document.getElementsByTagName("input")[x].type != "checkbox"){
-            mailBody += document.getElementsByTagName("input")[x].value + "%0D%0A%0D%0A";
-        }
-    }
-
-    document.body.appendChild(a);
-
-    a.href = "mailto:anrawofficial@gmail.com?subject=" + document.getElementsByTagName("h1")[0].innerText + " From Website&body=" + mailBody;
-    a.target = "top";
-    a.click();
-
-    document.body.removeChild(a);
 }
 // Public Relation Script

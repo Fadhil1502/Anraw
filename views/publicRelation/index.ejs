@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs') %>
 <div class="public-relation" id="publicRelation">
-    <% if((new Date().getUTCHours() + 7 >= 18 || new Date().getUTCHours() + 7 <= 6) && PRContent != "blog" && PRContent != "tutorial"){ %>
+    <% if((new Date().getUTCHours() + 7 > 18 || new Date().getUTCHours() + 7 < 6) && PRContent != "blog" && PRContent != "tutorial"){ %>
         <%- include('./timeWarning.ejs') %>
         <br>
     <% } %>

@@ -58,14 +58,19 @@
                             </div>
                         </div>
                         <div style="flex-direction: column;">
-                            <label for="MIP">Message</label>
+                            <label for="MIP" onclick="reloadSlide(MIP)" style="cursor: pointer; user-select: none;">Message</label>
                             <textarea id="MIP" placeholder="Any message?" onchange="reloadSlide(MIP)"></textarea>
                         </div>
                         <div style="flex-direction: column;">
-                            <label for="CIPC">Credit</label>
+                            <label for="CIPC" onclick="reloadSlide(CIPC)" style="cursor: pointer; user-select: none;">Credit</label>
                             <input type="text" id="CIPC" placeholder="Your Instagram" onchange="reloadSlide(CIPC)">
                         </div>
                         <div style="flex-direction: column;">
+                            <p>Anraw Code</p>
+                            <div style="display: flex; align-items: center;">
+                                <input type="text" id="ACIP" style="border-radius: 25px 0px 0px 25px; width: 75%; height: 50px;" readonly>
+                                <label for="ACIP" onclick="copyColor(ACIP)" style="width: 25%; height: 50px; background: var(--background-orange); border-radius: 0px 25px 25px 0px; display: flex; align-items: center; justify-content: center;"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="var(--background-white)"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></label>
+                            </div>
                             <p>Hashtag</p>
                             <div style="display: flex; align-items: center;">
                                 <input type="text" id="HIP" style="border-radius: 25px 0px 0px 25px; width: 75%; height: 50px;">

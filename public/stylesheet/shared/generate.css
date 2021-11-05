@@ -147,6 +147,29 @@
     background: var(--background-orange);
 }
 
+.generate .Pradio label{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.generate .Pradio label input{
+    width: 75px;
+    height: 25px;
+    background: var(--background-white);
+    border: none;
+    border-radius: 25px;
+    padding: 12.5px;
+    cursor: default;
+    opacity: 0%;
+    transition: 0.5s;
+}
+
+.generate .section input[type = radio]:checked + label input{
+    opacity: 100%;
+    cursor: text;
+}
+
 .generate #colorAmount{
     display: flex;
     align-items: center;
@@ -169,7 +192,7 @@
     border-radius: 25px;
     overflow: hidden;
     flex-shrink: 0;
-    background: #ff9500;
+    background: var(--background-orange);
 }
 
 .generate #allColor{
