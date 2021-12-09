@@ -13,6 +13,9 @@ router.get('/', async (req, res) => {
     if(req.query.title != null && req.query.title !== ''){
         searchData = searchData.regex('title', new RegExp(req.query.title, 'i'))
     }
+    if(req.query.color != null && req.query.color !== '' && req.query.colors == 'y'){
+        searchData = searchData.regex('color1', new RegExp(req.query.color, 'i'))
+    }
     try{
         generate = await searchData.sort({ dateCreated: 'desc' }).exec()
         res.render('gallery/index', { 

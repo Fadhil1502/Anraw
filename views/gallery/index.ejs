@@ -6,11 +6,17 @@
         <form method="GET" action="/gallery" autocomplete="off">
             <div class="div">
                 <label for="creator">Creator</label>
-                <input type="text" name="creator" value="<%= searchData.creator %>" id="creator">
+                <input type="search" name="creator" value="<%= searchData.creator %>" id="creator">
             </div>
             <div class="div">
                 <label for="title">Title</label>
-                <input type="text" name="title" value="<%= searchData.title %>" id="title">
+                <input type="search" name="title" value="<%= searchData.title %>" id="title">
+            </div>
+            <div class="div">
+                <label for="colors">Main Color</label>
+                <input type="checkbox" id="colors" name="colors" value="y" onchange="blockColorS()">
+                <label for="colors"><div class="must"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="var(--background-orange)"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></div></label>
+                <input type="color" name="color" value="<%= searchData.color %>" id="color" style="cursor: not-allowed;" disabled>
             </div>
             <div class="div" style="justify-content: center;">
                 <button type="submit" class="button button-cta" onclick="outro()"><svg xmlns="http://www.w3.org/2000/svg" height="37.5px" viewBox="0 0 25 25" width="37.5px" fill="var(--background-white)"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></button>
@@ -40,6 +46,12 @@
             <label for="MFA">From Anraw</label>
             <input type="checkbox" id="MFA" onchange="selection()">
             <label for="MFA"><div class="must"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="var(--background-orange)"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></div></label>
+        </div>
+        <div class="div">
+            <label for="MHC">Have color</label>
+            <input type="checkbox" id="MHCC" onchange="selection()">
+            <label for="MHCC"><div class="must"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 25 25" width="25px" fill="var(--background-orange)"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></div></label>
+            <input type="color" id="MHC" onchange="selection()" disabled>
         </div>
         <div class="div">
             <label for="MLTI">Linked to Instagram</label>
@@ -85,17 +97,18 @@
             </div> 
         <% } %>    
     <% }) %> 
-    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="GSVG">
-        <circle cx="25" cy="25" r="25" fill="#0D0D0D"/>
-        <circle cx="6.57895" cy="6.57895" r="6.57895" fill="white"/>
-        <circle cx="6.57895" cy="25.0001" r="6.57895" fill="#FF9500"/>
-        <circle cx="6.57895" cy="43.421" r="6.57895" fill="#FF9500"/>
-        <circle cx="25" cy="6.57895" r="6.57895" fill="#FF9500"/>
-        <circle cx="25" cy="25.0001" r="6.57895" fill="#FF9500"/>
-        <circle cx="25" cy="43.421" r="6.57895" fill="white"/>
-        <circle cx="43.4211" cy="6.57895" r="6.57895" fill="white"/>
-        <circle cx="43.4211" cy="25.0001" r="6.57895" fill="#FF9500"/>
-        <circle cx="43.4211" cy="43.421" r="6.57895" fill="#FF9500"/>
-    </svg>
+    <svg width="50" height="50" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg" style="cursor: default;">
+        <circle cx="125" cy="125" r="125" fill="var(--background)"/>
+        <circle cx="32.8947" cy="32.8947" r="32.8947" fill="var(--background-white)"/>
+        <circle cx="32.8947" cy="125" r="32.8947" fill="var(--background-orange)"/>
+        <circle cx="32.8947" cy="217.105" r="32.8947" fill="var(--background-orange)"/>
+        <circle cx="125" cy="32.8947" r="32.8947" fill="var(--background-orange)"/>
+        <circle cx="125" cy="125" r="32.8947" fill="var(--background-orange)"/>
+        <circle cx="125" cy="217.105" r="32.8947" fill="var(--background-white)"/>
+        <circle cx="217.105" cy="32.8947" r="32.8947" fill="var(--background-white)"/>
+        <circle cx="217.105" cy="125" r="32.8947" fill="var(--background-orange)"/>
+        <circle cx="217.105" cy="217.105" r="32.8947" fill="var(--background-orange)"/>
+        <path d="M213.775 214.339H209.855V225H207.219V214.339H203.352V212.203H213.775V214.339ZM218.732 212.203L222.02 221.484L225.289 212.203H228.752V225H226.106V221.502L226.37 215.464L222.916 225H221.105L217.66 215.473L217.924 221.502V225H215.287V212.203H218.732Z" fill="var(--background)"/>
+    </svg>          
 </div>
 <%- include('../partials/footer.ejs') %>

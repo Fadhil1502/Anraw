@@ -8,6 +8,7 @@
 @import url('shared/post.css');
 @import url('shared/gallery.css');
 @import url('shared/publicRelation.css');
+@import url('shared/notfound.css');
 
 @keyframes loadingL{
     0%{
@@ -524,21 +525,20 @@ section:nth-child(odd){
     .pr .options div a p, .public-relation .service div a p{
         display: none;
     }
-
-    .save .setting, .save .preview{
-        width: 100%;
-    }
-
+    
     .save .setting{
-        height: 50vh;
+        width: 100%;
+        height: calc(50vh - 125px);
         margin-top: 0;
         position: relative;
         top: 0;
     }
 
     .save .preview{
-        min-height: 50vh;
-        height: fit-content;
+        width: 100%;
+        height: calc(50vh + 50px);
+        overflow-x: auto;
+        flex-direction: column;
     }
 
     .save .head{

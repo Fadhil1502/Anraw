@@ -56,13 +56,16 @@ window.addEventListener("load", function(){
             startGallery();
 
             window.addEventListener("scroll", function(){
-                if(window.scrollY == document.documentElement.scrollHeight - window.innerHeight && document.getElementById("MA").value == 0){
+                if(window.scrollY == document.documentElement.scrollHeight - window.innerHeight && document.getElementById("MA").value == 0 && !document.getElementById("MHCC").checked){
                     botPalette();
                 }
             })
         }
         if(document.getElementById("anrawTimeDiv") != null){
             setAnrawTime();
+        }
+        if(document.getElementById("notFound") != null){
+            notFoundLogo();
         }
     }, 1000)
 })
@@ -88,6 +91,16 @@ function outro(){
             document.getElementById("outro").getElementsByTagName("h1")[0].style.opacity = "100%";
         }, 7000)
     }, 1);
+}
+
+function notFoundLogo(){
+    var backgrounds = ["-white", "-green", "-orange", "-purple", ""];
+    var displays = ["none", ""];
+
+    for(var x = 0; x < 10; x++){
+        document.getElementsByTagName("circle")[x].style.display = displays[Math.floor(Math.random() * 2)];
+        document.getElementsByTagName("circle")[x].style.fill = "var(--background" + backgrounds[Math.floor(Math.random() * 5)] + ")";
+    }
 }
 
 // Landing Page Script
@@ -246,7 +259,7 @@ function setAnrawCode(){
         if(Number.isInteger(parseInt(anrawCode[0])) && anrawCode[0] <= 7){
             if((parseInt(anrawCode[0]) + 1) == anrawCode.length){
                 for(var x = 1; x <= anrawCode[0]; x++){
-                    if(!isNaN(Number('0x' + anrawCode[x]))){
+                    if(!isNaN(Number('0x' + anrawCode[x])) && anrawCode[x].length == 6){
                         temporaryData.push("#" + anrawCode[x]);
                     }
                     else{
@@ -1145,8 +1158,11 @@ function switchSetting(option){
         document.getElementById("saves").style.display = "none";
         document.getElementsByTagName("h5")[0].style.display = "none";
         document.getElementById("saves").setAttribute("onclick", "");
-        document.getElementById("preview").style.flexDirection = "row";
+        document.getElementById("preview").style.flexDirection = "";
         document.getElementById("preview").style.justifyContent = "space-evenly";
+        document.getElementById("preview").style.flexWrap = "";
+        document.getElementById("preview").style.overflowY = "";
+        document.getElementById("preview").style.overflowX = "";
     }
     if(option == "IP"){
         IP();
@@ -1155,8 +1171,11 @@ function switchSetting(option){
         document.getElementsByTagName("h5")[0].style.display = "block";
         document.getElementsByTagName("h5")[0].innerText = "Warning: when you click the 'Save' button, you will be asked about 'Download multiple files' click allow to download all slides";
         document.getElementById("saves").setAttribute("onclick", "downloadIP()");
-        document.getElementById("preview").style.flexDirection = "row";
+        document.getElementById("preview").style.flexDirection = "";
         document.getElementById("preview").style.justifyContent = "space-evenly";
+        document.getElementById("preview").style.flexWrap = "";
+        document.getElementById("preview").style.overflowY = "";
+        document.getElementById("preview").style.overflowX = "";
     }
     if(option == "PDFF"){
         PDFF();
@@ -1167,6 +1186,9 @@ function switchSetting(option){
         document.getElementById("saves").setAttribute("onclick", "window.print();");
         document.getElementById("preview").style.flexDirection = "column";
         document.getElementById("preview").style.justifyContent = "flex-start";
+        document.getElementById("preview").style.flexWrap = "nowrap";
+        document.getElementById("preview").style.overflowY = "auto";
+        document.getElementById("preview").style.overflowX = "hidden";
     }
 
 }
@@ -2132,9 +2154,18 @@ function reloadSlide(slide){
 }
 
 function downloadIP(){
+    var uCode = new Date().valueOf().toString();
+    var aCode = "anraw";
+    var sCode = "";
+
+    for(var y = 0; y < uCode.length; y++){
+        if(aCode[uCode[y]] != undefined){
+            sCode += aCode[uCode[y]];
+        }
+    }
     for(var x = 0; x < document.getElementById("NIPS").value; x++){
         if(window.navigator.msSaveBlob){
-            window.navigator.msSaveBlob(document.getElementById("c" + x).toDataURL(), "slide" + (x + 1) + ".png");
+            window.navigator.msSaveBlob(document.getElementById("c" + x).toDataURL(), sCode + "s" + (x + 1) + ".png");
         }
         else{
             var a = document.createElement("a");
@@ -2142,7 +2173,7 @@ function downloadIP(){
             document.body.appendChild(a);
 
             a.href = document.getElementById("c" + x).toDataURL();
-            a.download = "slide" + (x + 1) + ".png";
+            a.download = sCode + "s" + (x + 1) + ".png";
             a.click();
 
             document.body.removeChild(a);
@@ -2392,7 +2423,7 @@ function anrawCode(){
         if(Number.isInteger(parseInt(anrawCode[0])) && anrawCode[0] <= 7){
             if((parseInt(anrawCode[0]) + 1) == anrawCode.length){
                 for(var x = 1; x <= anrawCode[0]; x++){
-                    if(!isNaN(Number('0x' + anrawCode[x]))){
+                    if(!isNaN(Number('0x' + anrawCode[x])) && anrawCode[x].length == 6){
                         temporaryData.push("#" + anrawCode[x]);
                     }
                     else{
@@ -2822,12 +2853,45 @@ function selection(){
             }
         }
     }
+    if(document.getElementById("MHCC").checked){
+        document.getElementById("MHC").removeAttribute("disabled");
+        document.getElementById("MHC").style.cursor = "pointer";
+
+        for(var y = 0; y < document.getElementsByClassName("palette").length; y++){
+            console.log("y")
+            for(var z = 0; z < document.getElementsByClassName("palette")[y].getElementsByClassName("colors")[0].getElementsByTagName("input").length; z++){
+                console.log("z")
+                if(document.getElementsByClassName("palette")[y].getElementsByTagName("input")[z].value == document.getElementById("MHC").value){
+                    break;
+                }
+                else if(z == document.getElementsByClassName("palette")[y].getElementsByClassName("colors")[0].getElementsByTagName("input").length - 1){
+                    document.getElementsByClassName("palette")[y].style.display = "none";
+                    console.log("hide")
+                }
+            }
+        }
+    }
+    else{
+        document.getElementById("MHC").setAttribute("disabled", "");
+        document.getElementById("MHC").style.cursor = "not-allowed";
+    }
     if(document.getElementById("MLTI").checked){
         for(var y = 0; y < document.getElementsByClassName("palette").length; y++){
             if(document.getElementsByClassName("palette")[y].getElementsByClassName("LTI")[0] == null){
                 document.getElementsByClassName("palette")[y].style.display = "none";
             }
         }
+    }
+}
+
+function blockColorS(){
+    if(document.getElementById("colors").checked){
+        document.getElementById("color").removeAttribute("disabled");
+        document.getElementById("color").style.cursor = "pointer";
+    }
+    else{
+        document.getElementById("color").setAttribute("disabled", "");
+        document.getElementById("color").style.cursor = "not-allowed";
     }
 }
 // Gallery Script

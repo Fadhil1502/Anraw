@@ -38,5 +38,10 @@ app.use('/gallery', galleryRouter)
 app.use('/save', saveRouter)
 app.use('/post', postRouter)
 app.use('/pr', publicRelationRouter)
+app.use((req, res) => {
+    res.status(404).render('partials/notFound', { 
+        page: 'Page not found - '
+    });
+})
 
 app.listen(process.env.PORT || 3000)
