@@ -11,7 +11,10 @@ router.get('/', (req, res) => {
 router.get('/:id', async (req, res) => {
     try{
         const generate = await Generate.findById(req.params.id)
-        if(generate.posted){
+        if(generate == null){
+            res.render('save/new', { generate: null, page: 'Post - ' })
+        }
+        else if(generate.posted){
             res.render('post/posted', { generate: generate, page: 'Post - ' })
         }
         else{

@@ -2528,7 +2528,7 @@ function generateSetup(){
     else{
         document.getElementById("IS").style.display = "none";
     }
-    if(document.getElementById("allowQuickSave").checked){
+    if(document.getElementById("allowQuickCopy").checked){
         for(var x = 0; x < data[7]; x++){
             document.getElementById("C" + x).style.display = "";
         }
