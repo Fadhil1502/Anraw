@@ -3,7 +3,7 @@ const router = express.Router()
 const Generate = require('../models/generate')
 
 //Unknown Save
-router.get('/:id', (req, res) => {
+router.get('/', (req, res) => {
     res.render('save/new', { generate: null, page: 'Save - ' })
 })
 
